@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" data-astro-cid-z4jru4n3>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: the description that appears in search engine results -->
+  <meta name="description" content="Shivank — IB student in Singapore aiming for medicine. Projects, photography, and the journey so far.">
+
+  <!-- The page title shown in browser tab — passed in by each page -->
+  <title>Shivank</title>
+
+  <!-- Preconnect tells the browser to establish a connection to Google
+       Fonts early, so fonts load faster                              -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Load our typefaces: Nunito (headings), Nunito Sans (body), and
+       Inter (small meta/label text — tech tags, dates — on the
+       Projects timeline; a clean, neutral sans distinct from the
+       body copy font, used only at small sizes for a "precise, technical"
+       feel). Only the exact weights/styles actually used are requested
+       here — 0,400 and 0,700 are upright (roman) weights, 1,400 is a
+       true italic (so italic text below uses a real italic face
+       instead of the browser faking a slant). Add more if you use new
+       weights. -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- <ClientRouter /> intentionally removed — see note in frontmatter. -->
+
+<link rel="stylesheet" href="assets/BaseLayout.B3tS9Wpl.css">
+<link rel="stylesheet" href="assets/projects.CxYbYLL6.css">
+<link rel="stylesheet" href="assets/index.B-V-lkgg.css"><style>[data-astro-transition-scope="astro-l25zdozq-1"] { view-transition-name: nav-notch; }@layer astro { ::view-transition-old(nav-notch) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(nav-notch) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(nav-notch) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(nav-notch) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-l25zdozq-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-l25zdozq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-l25zdozq-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-l25zdozq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-l25zdozq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-l25zdozq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-l25zdozq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-l25zdozq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-5l2t6pm4-2"] { view-transition-name: nav-bg; }@layer astro { ::view-transition-old(nav-bg) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(nav-bg) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(nav-bg) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(nav-bg) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-5l2t6pm4-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-5l2t6pm4-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-5l2t6pm4-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-5l2t6pm4-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-5l2t6pm4-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-5l2t6pm4-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-5l2t6pm4-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-5l2t6pm4-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-ss5qawsi-3"] { view-transition-name: nav; }@layer astro { ::view-transition-old(nav) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(nav) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(nav) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(nav) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ss5qawsi-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ss5qawsi-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ss5qawsi-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ss5qawsi-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ss5qawsi-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ss5qawsi-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ss5qawsi-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ss5qawsi-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head>
+
+<body data-astro-cid-z4jru4n3>
+
+  <!-- Navbar lives in ONE place: assets/nav.js (injected here at load). -->
+<script src="assets/nav.js"></script>
+
+  <!--
+    On desktop the nav is a small floating capsule that overlaps the
+    page rather than pushing it aside, so <main> doesn't need any
+    offset there. On mobile it's a real top bar that occupies its own
+    space, so .page-content adds clearance just for that case (in the
+    style block below). <main> is where each page's content lives;
+    <slot /> is a placeholder Astro fills with whatever the page
+    passes as its content — think of it like a picture frame.
+  -->
+  <div class="page-content" data-astro-cid-z4jru4n3>
+    <main data-astro-cid-z4jru4n3>
+      
+
+  
+  <section class="hero" data-astro-cid-lcdefpme>
+
+    <p class="hero-mark fade-in" data-astro-cid-lcdefpme>Personal site</p>
+
+    <div class="hero-bottom" data-astro-cid-lcdefpme>
+
+      <div class="hero-aside fade-in" data-astro-cid-lcdefpme>
+        <!-- A stand-in from the photography set (site owner's choice)
+             until a portrait photo exists — the 4:5 wrapper +
+             object-fit: cover crop it to fit. Swap just the src/alt
+             when the real photo arrives. -->
+        <div class="hero-photo" data-astro-cid-lcdefpme>
+          <img src="photography/IMG_6815.jpg" alt="Palms leaning over a beach cove — from the photography gallery" loading="eager" data-astro-cid-lcdefpme>
+        </div>
+
+        <p class="hero-currently" data-astro-cid-lcdefpme>
+          <span class="currently-label" data-astro-cid-lcdefpme>Currently —</span>
+          Building this site, and preparing medical school applications.
+        </p>
+        <a href="#work" class="link-hover hero-link" data-astro-cid-lcdefpme>Featured projects →</a>
+      </div>
+
+      <div class="hero-main fade-in" data-astro-cid-lcdefpme>
+        <p class="hero-kicker" data-astro-cid-lcdefpme>Hi, I'm Shivank —</p>
+        <h1 class="hero-statement" data-astro-cid-lcdefpme>
+          I want to study <em class="accent-word" data-astro-cid-lcdefpme>medicine</em>. This site is my story
+          leading up to it. A story I'm still writing.
+        </h1>
+        <!-- The one explicit CTA pair on the page — right-aligned to
+             sit on the statement's own edge. Primary jumps to the
+             featured projects; secondary leaves for GitHub. -->
+        <div class="hero-cta-row" data-astro-cid-lcdefpme>
+          <a href="#work" class="hero-cta" data-astro-cid-lcdefpme>View my work →</a>
+          <a href="https://github.com/ShivankC" class="hero-cta hero-cta--ghost" target="_blank" rel="noopener" data-astro-cid-lcdefpme>GitHub ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  
+  <section class="about-block" data-astro-cid-lcdefpme>
+    <div class="about-grid fade-in" data-astro-cid-lcdefpme>
+
+      <div class="about-label" data-astro-cid-lcdefpme>
+        <p class="section-label" data-astro-cid-lcdefpme>About</p>
+      </div>
+
+      <div class="about-main" data-astro-cid-lcdefpme>
+        <p class="about-statement" data-astro-cid-lcdefpme>
+          I'm an IB student in Singapore, aiming for medicine. Along the way: hackathon
+          podiums, a best-delegate run at MUN, a shelf of games and AI tools built from
+          scratch, and a growing archive of landscape photographs.
+        </p>
+
+        <dl class="about-facts" data-astro-cid-lcdefpme>
+          <div class="about-fact" data-astro-cid-lcdefpme>
+            <dt class="about-fact-label" data-astro-cid-lcdefpme>Aiming for</dt>
+            <dd class="about-fact-value" data-astro-cid-lcdefpme>Medicine</dd>
+          </div>
+          <div class="about-fact" data-astro-cid-lcdefpme>
+            <dt class="about-fact-label" data-astro-cid-lcdefpme>Based in</dt>
+            <dd class="about-fact-value" data-astro-cid-lcdefpme>Singapore</dd>
+          </div>
+          <div class="about-fact" data-astro-cid-lcdefpme>
+            <dt class="about-fact-label" data-astro-cid-lcdefpme>Building with</dt>
+            <dd class="about-fact-value" data-astro-cid-lcdefpme>Python &amp; JS</dd>
+          </div>
+          <div class="about-fact" data-astro-cid-lcdefpme>
+            <dt class="about-fact-label" data-astro-cid-lcdefpme>Off the screen</dt>
+            <dd class="about-fact-value" data-astro-cid-lcdefpme>Guitar &amp; Tennis</dd>
+          </div>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+
+  
+  <section id="work" class="fp-block" data-astro-cid-lcdefpme>
+    <div class="container fp-heading fade-in" data-astro-cid-lcdefpme>
+      <p class="section-label" data-astro-cid-lcdefpme>Featured Projects</p>
+      <a href="projects.html" class="link-hover" data-astro-cid-lcdefpme>View all projects →</a>
+    </div>
+
+    <div class="container" data-astro-cid-lcdefpme>
+      <div class="fp-strip" id="fpStrip" data-astro-cid-lcdefpme>
+        <div class="fp-strip-item" data-astro-cid-lcdefpme>
+            <button class="project-card project-card--featured" type="button" aria-haspopup="dialog" data-index="0" data-astro-cid-y2vllrex>
+  <div class="card-media" data-astro-cid-y2vllrex>
+    <img src="projects/marine-life-museum.png" alt="Marine Life Museum Website cover" loading="lazy" data-astro-cid-y2vllrex>
+  </div>
+  <div class="card-body" data-astro-cid-y2vllrex>
+    <span class="card-featured-mark" data-astro-cid-y2vllrex>★ Featured</span>
+    <p class="card-type" data-astro-cid-y2vllrex>Website · HTML · CSS · JS · PHP</p>
+    <h3 class="card-name" data-astro-cid-y2vllrex>Marine Life Museum Website</h3>
+    <!-- Not shown on the collapsed card — kept in the DOM (hidden, not
+         just visually) purely so the click-to-expand panel can still
+         read it; a visible subtitle here was one of the things making
+         cards different heights depending on the project. -->
+    
+    <p class="card-date" data-astro-cid-y2vllrex>Mar 2022</p>
+    <p class="card-desc" data-astro-cid-y2vllrex>A virtual museum with exhibit wings for aquatic mammals, molluscs, crustaceans and more, plus ticketing and donation pages — my first full website.</p>
+  </div>
+</button>
+          </div><div class="fp-strip-item" data-astro-cid-lcdefpme>
+            <button class="project-card project-card--featured" type="button" aria-haspopup="dialog" data-index="3" data-astro-cid-y2vllrex>
+  <div class="card-media" data-astro-cid-y2vllrex>
+    <img src="projects/ninja-game.png" alt="Ninja Game cover" loading="lazy" data-astro-cid-y2vllrex>
+  </div>
+  <div class="card-body" data-astro-cid-y2vllrex>
+    <span class="card-featured-mark" data-astro-cid-y2vllrex>★ Featured</span>
+    <p class="card-type" data-astro-cid-y2vllrex>Python · Pygame</p>
+    <h3 class="card-name" data-astro-cid-y2vllrex>Ninja Game</h3>
+    <!-- Not shown on the collapsed card — kept in the DOM (hidden, not
+         just visually) purely so the click-to-expand panel can still
+         read it; a visible subtitle here was one of the things making
+         cards different heights depending on the project. -->
+    
+    <p class="card-date" data-astro-cid-y2vllrex>Jun 2023</p>
+    <p class="card-desc" data-astro-cid-y2vllrex>A tile-based ninja platformer — leafy floating islands, patrolling enemies, and proper level design. The most complete game of my game-dev year.</p>
+  </div>
+</button>
+          </div><div class="fp-strip-item" data-astro-cid-lcdefpme>
+            <button class="project-card project-card--featured" type="button" aria-haspopup="dialog" data-index="10" data-astro-cid-y2vllrex>
+  <div class="card-media" data-astro-cid-y2vllrex>
+    <img src="projects/mindful-study-hub.png" alt="Mindful Study Hub cover" loading="lazy" data-astro-cid-y2vllrex>
+  </div>
+  <div class="card-body" data-astro-cid-y2vllrex>
+    <span class="card-featured-mark" data-astro-cid-y2vllrex>★ Featured</span>
+    <p class="card-type" data-astro-cid-y2vllrex>Streamlit · Python · OpenAI</p>
+    <h3 class="card-name" data-astro-cid-y2vllrex>Mindful Study Hub</h3>
+    <!-- Not shown on the collapsed card — kept in the DOM (hidden, not
+         just visually) purely so the click-to-expand panel can still
+         read it; a visible subtitle here was one of the things making
+         cards different heights depending on the project. -->
+    
+    <p class="card-date" data-astro-cid-y2vllrex>Aug 2025</p>
+    <p class="card-desc" data-astro-cid-y2vllrex>A wellness companion for students — mood logging, screen-time tracking, a gratitude journal, breathing exercises and a Pomodoro timer, gamified with calm points and levels.</p>
+  </div>
+</button>
+          </div><div class="fp-strip-item" data-astro-cid-lcdefpme>
+            <button class="project-card project-card--featured" type="button" aria-haspopup="dialog" data-index="11" data-astro-cid-y2vllrex>
+  <div class="card-media" data-astro-cid-y2vllrex>
+    <img src="projects/globetrek.png" alt="GlobeTrek cover" loading="lazy" data-astro-cid-y2vllrex>
+  </div>
+  <div class="card-body" data-astro-cid-y2vllrex>
+    <span class="card-featured-mark" data-astro-cid-y2vllrex>★ Featured</span>
+    <p class="card-type" data-astro-cid-y2vllrex>Streamlit · Python · OpenAI</p>
+    <h3 class="card-name" data-astro-cid-y2vllrex>GlobeTrek</h3>
+    <!-- Not shown on the collapsed card — kept in the DOM (hidden, not
+         just visually) purely so the click-to-expand panel can still
+         read it; a visible subtitle here was one of the things making
+         cards different heights depending on the project. -->
+    <p class="card-subtitle" hidden data-astro-cid-y2vllrex>AI-based travel agent</p>
+    <p class="card-date" data-astro-cid-y2vllrex>Mar 2026</p>
+    <p class="card-desc" data-astro-cid-y2vllrex>An AI travel agent you plan trips with by chatting — it fills in the destination, flights, hotel and a day-by-day itinerary live as the conversation goes.</p>
+  </div>
+</button>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <section class="featured-block" data-astro-cid-lcdefpme>
+    <div class="container featured-heading fade-in" data-astro-cid-lcdefpme>
+      <p class="section-label" data-astro-cid-lcdefpme>Photography</p>
+      <a href="photography.html" class="link-hover" data-astro-cid-lcdefpme>View the gallery →</a>
+    </div>
+
+    <div class="featured-stage" data-astro-cid-lcdefpme>
+      <div class="featured-carousel" id="featuredCarousel" role="region" aria-label="Featured photos carousel" tabindex="0" data-astro-cid-lcdefpme>
+        <div class="featured-track" id="featuredTrack" data-astro-cid-lcdefpme>
+          <button class="featured-slide" type="button" data-index="0" aria-label="View Palms over the cove" data-astro-cid-lcdefpme>
+              <span class="featured-slide-inner" data-astro-cid-lcdefpme>
+                <img src="photography/IMG_6815.jpg" alt="Palms over the cove" loading="lazy" draggable="false" data-astro-cid-lcdefpme>
+                <span class="featured-slide-scrim" aria-hidden="true" data-astro-cid-lcdefpme></span>
+                <span class="featured-caption" data-astro-cid-lcdefpme>Palms over the cove</span>
+              </span>
+            </button><button class="featured-slide" type="button" data-index="1" aria-label="View A torn flag against the swell" data-astro-cid-lcdefpme>
+              <span class="featured-slide-inner" data-astro-cid-lcdefpme>
+                <img src="photography/IMG_6892.jpg" alt="A torn flag against the swell" loading="lazy" draggable="false" data-astro-cid-lcdefpme>
+                <span class="featured-slide-scrim" aria-hidden="true" data-astro-cid-lcdefpme></span>
+                <span class="featured-caption" data-astro-cid-lcdefpme>A torn flag against the swell</span>
+              </span>
+            </button><button class="featured-slide" type="button" data-index="2" aria-label="View Blue hour, mid-flight" data-astro-cid-lcdefpme>
+              <span class="featured-slide-inner" data-astro-cid-lcdefpme>
+                <img src="photography/IMG_7098.jpg" alt="Blue hour, mid-flight" loading="lazy" draggable="false" data-astro-cid-lcdefpme>
+                <span class="featured-slide-scrim" aria-hidden="true" data-astro-cid-lcdefpme></span>
+                <span class="featured-caption" data-astro-cid-lcdefpme>Blue hour, mid-flight</span>
+              </span>
+            </button><button class="featured-slide" type="button" data-index="3" aria-label="View Lantern under the skylight" data-astro-cid-lcdefpme>
+              <span class="featured-slide-inner" data-astro-cid-lcdefpme>
+                <img src="photography/IMG_6820.jpg" alt="Lantern under the skylight" loading="lazy" draggable="false" data-astro-cid-lcdefpme>
+                <span class="featured-slide-scrim" aria-hidden="true" data-astro-cid-lcdefpme></span>
+                <span class="featured-caption" data-astro-cid-lcdefpme>Lantern under the skylight</span>
+              </span>
+            </button><button class="featured-slide" type="button" data-index="4" aria-label="View Ceiling geometry" data-astro-cid-lcdefpme>
+              <span class="featured-slide-inner" data-astro-cid-lcdefpme>
+                <img src="photography/IMG_6983.jpg" alt="Ceiling geometry" loading="lazy" draggable="false" data-astro-cid-lcdefpme>
+                <span class="featured-slide-scrim" aria-hidden="true" data-astro-cid-lcdefpme></span>
+                <span class="featured-caption" data-astro-cid-lcdefpme>Ceiling geometry</span>
+              </span>
+            </button><button class="featured-slide" type="button" data-index="5" aria-label="View Rain on the tarmac" data-astro-cid-lcdefpme>
+              <span class="featured-slide-inner" data-astro-cid-lcdefpme>
+                <img src="photography/IMG_7086.jpg" alt="Rain on the tarmac" loading="lazy" draggable="false" data-astro-cid-lcdefpme>
+                <span class="featured-slide-scrim" aria-hidden="true" data-astro-cid-lcdefpme></span>
+                <span class="featured-caption" data-astro-cid-lcdefpme>Rain on the tarmac</span>
+              </span>
+            </button><button class="featured-slide" type="button" data-index="6" aria-label="View The bay through the palms" data-astro-cid-lcdefpme>
+              <span class="featured-slide-inner" data-astro-cid-lcdefpme>
+                <img src="photography/IMG_6810.jpg" alt="The bay through the palms" loading="lazy" draggable="false" data-astro-cid-lcdefpme>
+                <span class="featured-slide-scrim" aria-hidden="true" data-astro-cid-lcdefpme></span>
+                <span class="featured-caption" data-astro-cid-lcdefpme>The bay through the palms</span>
+              </span>
+            </button>
+        </div>
+      </div>
+
+      <button class="featured-arrow featured-arrow-prev" type="button" id="featuredPrev" aria-label="Previous photo" data-astro-cid-lcdefpme>‹</button>
+      <button class="featured-arrow featured-arrow-next" type="button" id="featuredNext" aria-label="Next photo" data-astro-cid-lcdefpme>›</button>
+    </div>
+
+    <div class="featured-dots" id="featuredDots" data-astro-cid-lcdefpme>
+      <button class="featured-dot" type="button" data-dot="0" aria-label="Go to photo 1" data-astro-cid-lcdefpme></button><button class="featured-dot" type="button" data-dot="1" aria-label="Go to photo 2" data-astro-cid-lcdefpme></button><button class="featured-dot" type="button" data-dot="2" aria-label="Go to photo 3" data-astro-cid-lcdefpme></button><button class="featured-dot" type="button" data-dot="3" aria-label="Go to photo 4" data-astro-cid-lcdefpme></button><button class="featured-dot" type="button" data-dot="4" aria-label="Go to photo 5" data-astro-cid-lcdefpme></button><button class="featured-dot" type="button" data-dot="5" aria-label="Go to photo 6" data-astro-cid-lcdefpme></button><button class="featured-dot" type="button" data-dot="6" aria-label="Go to photo 7" data-astro-cid-lcdefpme></button>
+    </div>
+  </section>
+
+
+  
+  <section class="journey-block" data-astro-cid-lcdefpme>
+    <div class="container journey-inner fade-in" data-astro-cid-lcdefpme>
+
+      <p class="section-label" data-astro-cid-lcdefpme>Journey</p>
+      <p class="journey-intro" data-astro-cid-lcdefpme>
+        From a first olympiad distinction to shipping games, then AI tools —
+        and now, the decision to aim for medicine.
+      </p>
+
+      <ul class="journey-list stagger-children" data-astro-cid-lcdefpme>
+        <li class="journey-row" data-astro-cid-lcdefpme>
+          <span class="journey-year" data-astro-cid-lcdefpme>2026</span>
+          <span class="journey-note" data-astro-cid-lcdefpme>Choosing medicine — Stanford Pre-Collegiate, HarvardX neuroscience</span>
+        </li>
+        <li class="journey-row" data-astro-cid-lcdefpme>
+          <span class="journey-year" data-astro-cid-lcdefpme>2025</span>
+          <span class="journey-note" data-astro-cid-lcdefpme>The pivot from games to AI and data tools</span>
+        </li>
+        <li class="journey-row" data-astro-cid-lcdefpme>
+          <span class="journey-year" data-astro-cid-lcdefpme>2022</span>
+          <span class="journey-note" data-astro-cid-lcdefpme>First website, first Python apps, first hackathon</span>
+        </li>
+      </ul>
+
+      <a href="timeline.html" class="link-hover" data-astro-cid-lcdefpme>Read the full story →</a>
+
+    </div>
+  </section>
+
+
+  
+  <section class="interests-block" data-astro-cid-lcdefpme>
+    <div class="container fade-in" data-astro-cid-lcdefpme>
+
+      <p class="section-label" data-astro-cid-lcdefpme>Interests</p>
+      <p class="interests-flow" data-astro-cid-lcdefpme>
+        Landscape photography, fingerstyle guitar, tennis,
+        swimming laps, a good book, and the occasional
+        ranked climb in Marvel Rivals.
+      </p>
+
+    </div>
+  </section>
+
+  <div class="panel-scrim" id="panelScrim" hidden data-astro-cid-xlb753yp></div>
+<div class="panel-wrap" id="panelWrap" hidden data-astro-cid-xlb753yp>
+  <div class="panel-flip" id="panelFlip" data-astro-cid-xlb753yp>
+    <div class="project-panel panel-face panel-face--front" id="projectPanel" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="panelName" data-astro-cid-xlb753yp>
+      <button class="panel-close" id="panelClose" type="button" aria-label="Close" data-astro-cid-xlb753yp>✕</button>
+      <div class="panel-grid" id="panelGrid" data-astro-cid-xlb753yp>
+        <!-- Carousel: 3 fixed slots (1 real cover + 2 clearly-marked
+             placeholders) reused for whichever project is open —
+             real screenshots come later, per project. -->
+        <div class="panel-carousel" data-astro-cid-xlb753yp>
+          <div class="carousel-slide is-active" data-slide="0" data-astro-cid-xlb753yp><img id="carouselImg" src="" alt="" data-astro-cid-xlb753yp></div>
+          <div class="carousel-slide" data-slide="1" data-astro-cid-xlb753yp>
+            <div class="carousel-placeholder" data-astro-cid-xlb753yp><span id="carouselPh1" data-astro-cid-xlb753yp></span></div>
+          </div>
+          <div class="carousel-slide" data-slide="2" data-astro-cid-xlb753yp>
+            <div class="carousel-placeholder" data-astro-cid-xlb753yp><span id="carouselPh2" data-astro-cid-xlb753yp></span></div>
+          </div>
+          <button class="carousel-arrow carousel-arrow--prev" id="carouselPrev" type="button" aria-label="Previous screenshot" data-astro-cid-xlb753yp>‹</button>
+          <button class="carousel-arrow carousel-arrow--next" id="carouselNext" type="button" aria-label="Next screenshot" data-astro-cid-xlb753yp>›</button>
+          <div class="carousel-dots" id="carouselDots" data-astro-cid-xlb753yp>
+            <button class="carousel-dot is-active" type="button" data-dot="0" aria-label="Screenshot 1" data-astro-cid-xlb753yp></button>
+            <button class="carousel-dot" type="button" data-dot="1" aria-label="Screenshot 2" data-astro-cid-xlb753yp></button>
+            <button class="carousel-dot" type="button" data-dot="2" aria-label="Screenshot 3" data-astro-cid-xlb753yp></button>
+          </div>
+          <div class="carousel-counter" id="carouselCounter" data-astro-cid-xlb753yp>1 / 3</div>
+        </div>
+        <div class="panel-text" data-astro-cid-xlb753yp>
+          <div class="panel-kind" data-astro-cid-xlb753yp>
+            <span class="panel-featured-mark" id="panelFeaturedMark" hidden data-astro-cid-xlb753yp>★ Featured</span>
+            <span class="panel-type" id="panelType" data-astro-cid-xlb753yp></span>
+          </div>
+          <h3 class="panel-name" id="panelName" data-astro-cid-xlb753yp></h3>
+          <p class="panel-subtitle" id="panelSubtitle" hidden data-astro-cid-xlb753yp></p>
+          <div class="panel-pills" id="panelPills" data-astro-cid-xlb753yp></div>
+          <p class="panel-desc" id="panelDesc" data-astro-cid-xlb753yp></p>
+          <p class="panel-date" id="panelDate" data-astro-cid-xlb753yp></p>
+          <div class="panel-links" data-astro-cid-xlb753yp>
+            <span class="panel-link panel-link--secondary is-placeholder" id="panelRepoLink" aria-disabled="true" title="GitHub link — to add" data-astro-cid-xlb753yp>GitHub <span class="arr" data-astro-cid-xlb753yp>↗</span></span>
+            <span class="panel-link panel-link--primary is-placeholder" id="panelDemoLink" aria-disabled="true" title="Link — to add" data-astro-cid-xlb753yp><span id="panelDemoLabel" data-astro-cid-xlb753yp>Live demo</span> <span class="arr" data-astro-cid-xlb753yp>↗</span></span>
+          </div>
+        </div>
+      </div>
+      <!-- Quiet signature mark: same on every project, just gold on
+           featured / violet on regular. Lives outside .panel-grid
+           (a sibling, not nested in the scrolling .panel-text) so
+           it stays put in the corner regardless of description
+           length or scroll position. -->
+      <span class="panel-arc" aria-hidden="true" data-astro-cid-xlb753yp></span>
+    </div>
+    <div class="panel-face panel-face--back" aria-hidden="true" data-astro-cid-xlb753yp></div>
+  </div>
+</div>
+
+<script>(function(){const projectsData = [{"i":0,"slug":"marine-life-museum","name":"Marine Life Museum Website","subtitle":null,"type":"Website · HTML · CSS · JS · PHP","month":"Mar","year":2022,"featured":true,"mode":"cinematic","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":1,"slug":"pokebattle","name":"PokeBattle","subtitle":null,"type":"Python · Tkinter","month":"Apr","year":2022,"featured":false,"mode":"calm","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":2,"slug":"climatewarrior","name":"ClimateWarrior","subtitle":null,"type":"Python · Pygame","month":"Aug","year":2022,"featured":false,"mode":"calm","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":3,"slug":"ninja-game","name":"Ninja Game","subtitle":null,"type":"Python · Pygame","month":"Jun","year":2023,"featured":true,"mode":"cinematic","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":4,"slug":"pygame-street-fighter","name":"PygameStreetFighter","subtitle":null,"type":"Python · Pygame","month":"Jun","year":2023,"featured":false,"mode":"cinematic","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":5,"slug":"tree-ninja","name":"Tree Ninja","subtitle":null,"type":"Scratch","month":"Sep","year":2023,"featured":false,"mode":"cinematic","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":6,"slug":"dodge","name":"Dodge","subtitle":null,"type":"Python · Pygame","month":"Oct","year":2023,"featured":false,"mode":"cinematic","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":7,"slug":"codeday","name":"CodeDay","subtitle":null,"type":"Python · Pygame","month":"Dec","year":2023,"featured":false,"mode":"cinematic","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":8,"slug":"borg-invasion","name":"Borg Invasion","subtitle":null,"type":"Python · Pygame","month":"Jul","year":2024,"featured":false,"mode":"cinematic","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":9,"slug":"movie-success-analysis","name":"Movie Success Analysis","subtitle":null,"type":"Jupyter · Data Analysis","month":"Jun","year":2025,"featured":false,"mode":"calm","repo":null,"demo":null,"demoLabel":"View notebook"},{"i":10,"slug":"mindful-study-hub","name":"Mindful Study Hub","subtitle":null,"type":"Streamlit · Python · OpenAI","month":"Aug","year":2025,"featured":true,"mode":"calm","repo":null,"demo":null,"demoLabel":"Live demo"},{"i":11,"slug":"globetrek","name":"GlobeTrek","subtitle":"AI-based travel agent","type":"Streamlit · Python · OpenAI","month":"Mar","year":2026,"featured":true,"mode":"calm","repo":null,"demo":null,"demoLabel":"Live demo"}];
+
+  const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /*
+    Click-to-expand panel: a single shared panel, populated from
+    whichever card was clicked, animated between the card's on-screen
+    rect and the panel's centred rest position via the Web Animations
+    API (needed because the swirl's rotation goes 0deg → a peak →
+    0deg — a "hump" a plain CSS transition can't express with only a
+    start and end state).
+  */
+  function initProjectPanels() {
+    // Defensive: if a prior page left the viewport scroll-locked (e.g.
+    // the user navigated away without closing the panel), clear it now.
+    document.documentElement.style.overflow = '';
+
+    const scrim = document.getElementById('panelScrim');
+    const wrap = document.getElementById('panelWrap');
+    const flip = document.getElementById('panelFlip');
+    const panel = document.getElementById('projectPanel');
+    if (!scrim || !wrap || !flip || !panel) return;
+
+    const closeBtn = document.getElementById('panelClose');
+    const carouselImg = document.getElementById('carouselImg');
+    const carouselPh1 = document.getElementById('carouselPh1');
+    const carouselPh2 = document.getElementById('carouselPh2');
+    const typeEl = document.getElementById('panelType');
+    const nameEl = document.getElementById('panelName');
+    const subtitleEl = document.getElementById('panelSubtitle');
+    const pillsEl = document.getElementById('panelPills');
+    const dateEl = document.getElementById('panelDate');
+    const descEl = document.getElementById('panelDesc');
+    const markEl = document.getElementById('panelFeaturedMark');
+    const repoLink = document.getElementById('panelRepoLink');
+    const demoLink = document.getElementById('panelDemoLink');
+    const demoLabelEl = document.getElementById('panelDemoLabel');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const counterEl = document.getElementById('carouselCounter');
+    const slides = Array.from(panel.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(panel.querySelectorAll('.carousel-dot'));
+    if (!(closeBtn && carouselImg instanceof HTMLImageElement && carouselPh1 && carouselPh2
+      && typeEl && nameEl && subtitleEl && pillsEl && dateEl && descEl && markEl
+      && repoLink && demoLink && demoLabelEl && prevBtn && nextBtn && counterEl
+      && slides.length && dots.length)) return;
+
+    let activeCard = null;
+    let currentAnim = null;
+    let carouselIndex = 0;
+
+    // Carousel: 3 fixed slots reused across every project (see the
+    // template) — prev/next wrap around, dots jump directly, and the
+    // counter always reflects the true position.
+    function showSlide(i) {
+      carouselIndex = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('is-active', idx === carouselIndex));
+      dots.forEach((d, idx) => d.classList.toggle('is-active', idx === carouselIndex));
+      counterEl.textContent = `${carouselIndex + 1} / ${slides.length}`;
+    }
+    prevBtn.addEventListener('click', () => showSlide(carouselIndex - 1));
+    nextBtn.addEventListener('click', () => showSlide(carouselIndex + 1));
+    dots.forEach((d, idx) => d.addEventListener('click', () => showSlide(idx)));
+
+    function setLinkState(el, href) {
+      const has = Boolean(href);
+      el.classList.toggle('is-placeholder', !has);
+      el.setAttribute('aria-disabled', String(!has));
+      el.title = has ? '' : 'Link — to add';
+    }
+
+    function flipEase() {
+      const v = getComputedStyle(document.documentElement).getPropertyValue('--ease-out').trim();
+      return v || 'cubic-bezier(0.16, 1, 0.3, 1)';
+    }
+
+    // A single translate+scale+rotateY move from the card's on-screen
+    // rect to the flip's own centred rest position (identity). The
+    // ROTATION is the interesting part: it travels from a large
+    // multiple of 360deg down to exactly 0 — combined with a strong
+    // ease-out this reads as "spins fast, decelerates, lands facing
+    // forward" in one continuous curve, no separate hump keyframe
+    // needed (unlike an in-plane wobble, this rotation is monotonic).
+    // Direction is tied to which side of centre the card sits on.
+    function buildKeyframes(cardRect, flipRect) {
+      const dx = (cardRect.left + cardRect.width / 2) - (flipRect.left + flipRect.width / 2);
+      const dy = (cardRect.top + cardRect.height / 2) - (flipRect.top + flipRect.height / 2);
+      const sx = cardRect.width / flipRect.width;
+      const sy = cardRect.height / flipRect.height;
+      const spin = (dx < 0 ? 1 : -1) * 720;
+      const from = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy}) rotateY(${spin}deg)`;
+      const to   = `translate(0px, 0px) scale(1, 1) rotateY(0deg)`;
+      return [{ transform: from }, { transform: to }];
+    }
+
+    function openPanel(card) {
+      if (!(card instanceof HTMLElement) || flip.classList.contains('is-open')) return;
+      activeCard = card;
+
+      const data = projectsData[Number(card.dataset.index)];
+      if (!data) return;
+      const desc = card.querySelector('.card-desc');
+      const img = card.querySelector('img');
+
+      typeEl.textContent = data.type;
+      nameEl.textContent = data.name;
+      if (data.subtitle) { subtitleEl.textContent = data.subtitle; subtitleEl.hidden = false; }
+      else { subtitleEl.textContent = ''; subtitleEl.hidden = true; }
+      dateEl.textContent = `${data.month} ${data.year}`;
+      descEl.textContent = desc ? desc.textContent || '' : '';
+
+      // Tech pills are just the kind tag's own " · "-separated parts —
+      // one source of truth, no separate pill list to keep in sync.
+      pillsEl.innerHTML = '';
+      data.type.split(' · ').forEach((label) => {
+        const pill = document.createElement('span');
+        pill.className = 'panel-pill';
+        pill.textContent = label;
+        pillsEl.appendChild(pill);
+      });
+
+      if (img instanceof HTMLImageElement) { carouselImg.src = img.src; carouselImg.alt = img.alt; }
+      carouselPh1.textContent = `${data.name} — screenshot 2 (placeholder)`;
+      carouselPh2.textContent = `${data.name} — screenshot 3 (placeholder)`;
+      showSlide(0);
+
+      setLinkState(repoLink, data.repo);
+      setLinkState(demoLink, data.demo);
+      demoLabelEl.textContent = data.demoLabel;
+
+      flip.classList.toggle('project-panel--featured', data.featured);
+      flip.classList.toggle('project-panel--cinematic', data.mode === 'cinematic');
+      flip.classList.toggle('project-panel--calm', data.mode === 'calm');
+      markEl.hidden = !data.featured;
+
+      document.documentElement.style.overflow = 'hidden'; // freeze the page underneath
+      scrim.hidden = false;
+      wrap.hidden = false;
+      requestAnimationFrame(() => scrim.classList.add('is-open')); // let it paint hidden first, then fade
+
+      const reduce = reduceMotion();
+      if (reduce) {
+        requestAnimationFrame(() => flip.classList.add('is-open')); // plain fade, no 3D
+      } else {
+        flip.classList.add('is-open'); // no visible gap needed — the flip itself is the entrance
+        const cardRect = card.getBoundingClientRect();
+        const flipRect = flip.getBoundingClientRect(); // natural centred rest position, no transform yet
+        if (currentAnim) currentAnim.cancel();
+        currentAnim = flip.animate(buildKeyframes(cardRect, flipRect), {
+          duration: 640,
+          easing: flipEase(),
+          fill: 'both',
+        });
+      }
+
+      panel.setAttribute('aria-hidden', 'false');
+      closeBtn.focus();
+      document.addEventListener('keydown', onKeydown);
+    }
+
+    function closePanel() {
+      if (!flip.classList.contains('is-open')) return;
+      const card = activeCard;
+
+      document.documentElement.style.overflow = '';
+      scrim.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+      document.removeEventListener('keydown', onKeydown);
+
+      const finish = () => {
+        flip.classList.remove('is-open');
+        wrap.hidden = true;
+        scrim.hidden = true;
+        if (card) card.focus();
+        activeCard = null;
+      };
+
+      const reduce = reduceMotion();
+      if (!reduce && card) {
+        const cardRect = card.getBoundingClientRect();
+        const flipRect = flip.getBoundingClientRect();
+        if (currentAnim) currentAnim.cancel();
+        // Same keyframes as opening, played backward — a true reverse
+        // (WAAPI's `direction: reverse` also time-reverses the easing
+        // curve itself, so this decelerates-then-lands on the way out
+        // exactly as it would if the open animation were literally
+        // played backward on a timeline).
+        currentAnim = flip.animate(buildKeyframes(cardRect, flipRect), {
+          duration: 560,
+          easing: flipEase(),
+          direction: 'reverse',
+          fill: 'both',
+        });
+        currentAnim.onfinish = finish;
+      } else {
+        flip.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName !== 'opacity') return;
+          flip.removeEventListener('transitionend', handler);
+          finish();
+        });
+        flip.classList.remove('is-open');
+      }
+    }
+
+    function onKeydown(e) {
+      if (e.key === 'Escape') closePanel();
+    }
+
+    document.querySelectorAll('.project-card').forEach((card) => {
+      card.addEventListener('click', () => openPanel(card));
+    });
+    closeBtn.addEventListener('click', closePanel);
+    scrim.addEventListener('click', closePanel);
+  }
+
+  initProjectPanels();
+  document.addEventListener('astro:page-load', initProjectPanels);
+})();</script>
+
+
+    </main>
+
+    <footer class="footer" data-astro-cid-jo6i4kqk>
+  <div class="container footer-inner" data-astro-cid-jo6i4kqk>
+
+    <!-- Name on the left -->
+    <p class="footer-name" data-astro-cid-jo6i4kqk>Shivank</p>
+
+    <!-- Social / external links in the center -->
+    <div class="footer-links" data-astro-cid-jo6i4kqk>
+      <a href="https://github.com/ShivankC" class="footer-link" target="_blank" rel="noopener" data-astro-cid-jo6i4kqk>GitHub</a>
+    </div>
+
+    <!-- Copyright on the right -->
+    <p class="footer-copy" data-astro-cid-jo6i4kqk>
+      © 2026
+    </p>
+
+  </div>
+</footer>
+  </div>
+
+  <!--
+    Speckle/stipple texture, sitting behind the whole page (z-index:
+    -1, see the style block below) — small dark flecks, not
+    continuous grain. Purely decorative (aria-hidden, pointer-events:
+    none — it can never intercept a click or a hover).
+
+    Deliberately NOT given its own transition:name. That was tried —
+    the intent was to keep it from flickering through the default
+    root fade on navigation, since it's identical on every page — but
+    it backfired: a named element gets captured as an independent
+    snapshot layer that the browser composites on top of everything
+    else while a transition is active, ignoring this element's own
+    z-index for that whole window. The visible symptom was exactly
+    "the specks show up, then vanish fast right after the page
+    settles" — briefly on top of everything during the transition,
+    then correctly hidden behind opaque content again once it ends.
+    Leaving it unnamed means it's just baked into the default root
+    snapshot like ordinary content, which already has the correct
+    z-order baked into its pixels — no separate overlay, no flicker.
+  -->
+  <div class="fleck-overlay" aria-hidden="true" data-astro-cid-z4jru4n3></div>
+
+</body>
+</html>
+
+
+
+<!--
+  SCROLL FADE-IN SCRIPT
+  This runs in the browser (not during build time).
+  It watches for elements with .fade-in or .stagger-children
+  and adds the class .visible when they scroll into view,
+  which triggers the CSS transition defined in global.css.
+-->
+<script type="module">//#region src/layouts/BaseLayout.astro?astro&type=script&index=0&lang.ts
+function initScrollAnimations() {
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				const el = entry.target;
+				[el, ...el.children].forEach((node) => {
+					if (!(node instanceof HTMLElement)) return;
+					node.style.willChange = "transform, opacity";
+					node.addEventListener("transitionend", function clearWillChange(e) {
+						if (e.target !== node) return;
+						if (node.getAnimations().length > 0) return;
+						node.style.willChange = "";
+						node.removeEventListener("transitionend", clearWillChange);
+					});
+				});
+				el.classList.add("visible");
+				observer.unobserve(el);
+			}
+		});
+	}, {
+		threshold: .08,
+		rootMargin: "0px 0px -40px 0px"
+	});
+	document.querySelectorAll(".fade-in, .stagger-children").forEach((el) => {
+		observer.observe(el);
+	});
+}
+initScrollAnimations();
+document.addEventListener("astro:page-load", initScrollAnimations);
+function navOrder() {
+	return Array.from(document.querySelectorAll(".nav-link")).map((a) => new URL(a.href).pathname);
+}
+function indexOfPath(order, pathname) {
+	return order.findIndex((p) => pathname === p || p !== "/" && pathname.startsWith(p));
+}
+document.addEventListener("astro:before-preparation", (event) => {
+	const root = document.documentElement;
+	const e = event;
+	const order = navOrder();
+	const fromIdx = indexOfPath(order, e.from?.pathname ?? "");
+	const toIdx = indexOfPath(order, e.to?.pathname ?? "");
+	if (fromIdx === -1 || toIdx === -1 || fromIdx === toIdx) {
+		root.removeAttribute("data-astro-reel");
+		root.removeAttribute("data-astro-reel-jumps");
+		return;
+	}
+	root.setAttribute("data-astro-reel", toIdx > fromIdx ? "up" : "down");
+	const jumps = Math.min(4, Math.abs(toIdx - fromIdx));
+	root.setAttribute("data-astro-reel-jumps", String(jumps));
+});
+//#endregion</script>
+
+
+<!--
+  STYLES FOR THIS PAGE
+  These styles only apply to index.astro — they won't affect other pages.
+-->
+
+<script type="module" src="assets/index.astro_astro_type_script_index_0_lang.DWa_Wl-_.js"></script>

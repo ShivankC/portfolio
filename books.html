@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en" data-astro-cid-z4jru4n3>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: the description that appears in search engine results -->
+  <meta name="description" content="[A one-sentence description of the books shown here.]">
+
+  <!-- The page title shown in browser tab — passed in by each page -->
+  <title>Books — Shivank</title>
+
+  <!-- Preconnect tells the browser to establish a connection to Google
+       Fonts early, so fonts load faster                              -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Load our typefaces: Nunito (headings), Nunito Sans (body), and
+       Inter (small meta/label text — tech tags, dates — on the
+       Projects timeline; a clean, neutral sans distinct from the
+       body copy font, used only at small sizes for a "precise, technical"
+       feel). Only the exact weights/styles actually used are requested
+       here — 0,400 and 0,700 are upright (roman) weights, 1,400 is a
+       true italic (so italic text below uses a real italic face
+       instead of the browser faking a slant). Add more if you use new
+       weights. -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- <ClientRouter /> intentionally removed — see note in frontmatter. -->
+
+<link rel="stylesheet" href="assets/BaseLayout.B3tS9Wpl.css">
+<style>.page-header[data-astro-cid-b2i3gsw2] {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-12);
+}
+
+.page-header-desc[data-astro-cid-b2i3gsw2] {
+  margin-top: var(--space-4);
+  font-size: 1.0625rem;
+  color: var(--fg-muted);
+  max-width: 56ch;
+}
+.books-section[data-astro-cid-yxyljrfl] {
+  padding-bottom: var(--space-24);
+}
+
+.page-header h1 {
+  font-size: 2.75rem;
+}
+
+.books-grid[data-astro-cid-yxyljrfl] {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8) var(--space-6);
+}
+
+@media (width <= 1080px) {
+  .books-grid[data-astro-cid-yxyljrfl] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width <= 720px) {
+  .books-grid[data-astro-cid-yxyljrfl] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 460px) {
+  .books-grid[data-astro-cid-yxyljrfl] {
+    grid-template-columns: 1fr;
+  }
+}
+
+.book-card[data-astro-cid-yxyljrfl] {
+  --card-shadow: 0 10px 24px #3a281624;
+  --card-shadow-hover: 0 16px 34px #3a281633;
+  background-color: #f8f4ea;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out);
+}
+
+.book-card[data-astro-cid-yxyljrfl]:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.book-cover[data-astro-cid-yxyljrfl] {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-color: #eee7d8;
+}
+
+.book-cover[data-astro-cid-yxyljrfl] img[data-astro-cid-yxyljrfl] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-body[data-astro-cid-yxyljrfl] {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.book-title[data-astro-cid-yxyljrfl] {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.book-author[data-astro-cid-yxyljrfl] {
+  font-family: var(--font-meta);
+  font-size: .8rem;
+  color: var(--fg-subtle);
+  margin-top: .2em;
+}
+
+.book-note[data-astro-cid-yxyljrfl] {
+  font-size: .875rem;
+  line-height: 1.55;
+  color: var(--fg-muted);
+  margin-top: var(--space-3);
+}
+
+.books-secondary[data-astro-cid-yxyljrfl] {
+  margin-top: var(--space-14);
+}
+
+.books-toggle[data-astro-cid-yxyljrfl] {
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.books-toggle[data-astro-cid-yxyljrfl] .arr[data-astro-cid-yxyljrfl] {
+  transition: transform .2s var(--ease-out);
+}
+
+.books-toggle[data-astro-cid-yxyljrfl]:hover .arr[data-astro-cid-yxyljrfl], .books-toggle[data-astro-cid-yxyljrfl][aria-expanded="true"] .arr[data-astro-cid-yxyljrfl] {
+  transform: translateX(3px);
+}
+
+.books-toggle[data-astro-cid-yxyljrfl][aria-expanded="true"] .arr[data-astro-cid-yxyljrfl] {
+  transform: rotate(90deg);
+}
+
+.books-rest-list[data-astro-cid-yxyljrfl] {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.books-rest-row[data-astro-cid-yxyljrfl] {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid #1a1a1a14;
+}
+
+.books-rest-title[data-astro-cid-yxyljrfl] {
+  font-size: .95rem;
+  color: var(--fg);
+}
+
+.books-rest-author[data-astro-cid-yxyljrfl] {
+  font-family: var(--font-meta);
+  font-size: .8rem;
+  color: var(--fg-subtle);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-card[data-astro-cid-yxyljrfl], .books-toggle[data-astro-cid-yxyljrfl] .arr[data-astro-cid-yxyljrfl] {
+    transition: none;
+  }
+}
+</style><style>[data-astro-transition-scope="astro-l25zdozq-1"] { view-transition-name: nav-notch; }@layer astro { ::view-transition-old(nav-notch) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(nav-notch) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(nav-notch) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(nav-notch) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-l25zdozq-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-l25zdozq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-l25zdozq-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-l25zdozq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-l25zdozq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-l25zdozq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-l25zdozq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-l25zdozq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-5l2t6pm4-2"] { view-transition-name: nav-bg; }@layer astro { ::view-transition-old(nav-bg) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(nav-bg) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(nav-bg) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(nav-bg) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-5l2t6pm4-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-5l2t6pm4-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-5l2t6pm4-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-5l2t6pm4-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-5l2t6pm4-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-5l2t6pm4-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-5l2t6pm4-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-5l2t6pm4-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-ss5qawsi-3"] { view-transition-name: nav; }@layer astro { ::view-transition-old(nav) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(nav) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(nav) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(nav) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ss5qawsi-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ss5qawsi-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ss5qawsi-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ss5qawsi-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ss5qawsi-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ss5qawsi-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ss5qawsi-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ss5qawsi-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head>
+
+<body data-astro-cid-z4jru4n3>
+
+  <!-- Navbar lives in ONE place: assets/nav.js (injected here at load). -->
+<script src="assets/nav.js"></script>
+
+  <!--
+    On desktop the nav is a small floating capsule that overlaps the
+    page rather than pushing it aside, so <main> doesn't need any
+    offset there. On mobile it's a real top bar that occupies its own
+    space, so .page-content adds clearance just for that case (in the
+    style block below). <main> is where each page's content lives;
+    <slot /> is a placeholder Astro fills with whatever the page
+    passes as its content — think of it like a picture frame.
+  -->
+  <div class="page-content" data-astro-cid-z4jru4n3>
+    <main data-astro-cid-z4jru4n3>
+      
+
+  <section class="page-header fade-in" data-astro-cid-b2i3gsw2>
+  <div class="container" data-astro-cid-b2i3gsw2>
+    <p class="section-label" data-astro-cid-b2i3gsw2>Books</p>
+    <h1 data-astro-cid-b2i3gsw2>Books</h1>
+    <p class="page-header-desc" data-astro-cid-b2i3gsw2>[A short intro line about what&#39;s on this shelf — to fill in.]</p>
+  </div>
+</section>
+
+  <section class="books-section" data-astro-cid-yxyljrfl>
+    <div class="container" data-astro-cid-yxyljrfl>
+
+      <div class="books-grid" data-astro-cid-yxyljrfl>
+        <article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Shoe Dog.jpg" alt="Shoe Dog cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Shoe Dog</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Phil Knight</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Knight almost went bankrupt like every other month for a decade before Nike became Nike. That&#39;s the whole book, honestly. Not some visionary master plan, just a guy refusing to quit through one cash crisis after another. Made &quot;overnight success&quot; sound like a joke.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Dune.jpg" alt="Dune cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Dune</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Frank Herbert</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Everyone treats Paul Atreides like the hero, but Herbert&#39;s actually writing him as a cautionary tale. Messiahs are dangerous, not cool. Took me a while to notice that on a first read. The politics through ecology stuff, water, spice, control, has aged weirdly well too.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/The Unseen Body.jpg" alt="The Unseen Body cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>The Unseen Body</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Jonathan Reisman</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>A doctor writing about anatomy through the weirdest places he&#39;s worked: Antarctica, rural India, a morgue. Way better than any bio textbook because every organ comes attached to an actual gross or strange story instead of a diagram.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/The Body.jpg" alt="The Body cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>The Body</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Bill Bryson</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Classic Bryson grab bag of &quot;wait, seriously?&quot; facts about your own body. Not much of an argument holding it together, just constant reminders of how much stuff your body is doing right now that you have zero awareness of.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Behave.jpg" alt="Behave cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Behave</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Robert Sapolsky</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Long book. Sapolsky&#39;s trick is explaining a single human action by zooming out: what happened a second ago, then a minute, then your childhood, then a million years of evolution. Slow going in parts, but it permanently changed how I think about why people do what they do.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Outlive.jpg" alt="Outlive cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Outlive</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Peter Attia</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Basically: stop waiting for disease to show up and start acting now like it&#39;s already coming. The exercise as medicine argument hit harder than the nutrition stuff. He makes a good case it beats most drugs on the market.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/The Seven Measures of the World.jpg" alt="The Seven Measures of the World cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>The Seven Measures of the World</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Piero Martin</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Didn&#39;t expect a book about the kilogram and the second to be this fun. It&#39;s really a history of how humans agreed on anything at all. Standardizing a unit of measurement turns out to be a centuries long political fight.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Livewired.jpg" alt="Livewired cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Livewired</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>David Eagleman</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Eagleman&#39;s whole point is that &quot;hardwired&quot; is the wrong word for how brains work. They&#39;re constantly rewiring around whatever input they get. The sensory substitution stuff, feeling sound, seeing through your tongue, sounds made up but isn&#39;t.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/A Brief History of Intelligence.jpg" alt="A Brief History of Intelligence cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>A Brief History of Intelligence</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Max Bennett</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Traces intelligence back through five evolutionary jumps and lines each one up against where AI currently is. Finally got a real answer for why a computer can beat a grandmaster at chess but can&#39;t fold laundry. Evolution built those skills in basically reverse order from how we built AI.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Same As Ever.jpg" alt="Same As Ever cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Same As Ever</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Morgan Housel</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Short essays, mostly about money and risk, all making the same underlying point: people don&#39;t really change, situations just get repackaged. More of a keep it on the shelf and reread a chapter book than a cover to cover one.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Sapiens.jpg" alt="Sapiens cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Sapiens</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Yuval Noah Harari</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>The one about how humans run on collective made up stories: money, nations, religion, corporations, none of which exist outside of us all agreeing to believe them. Sounds obvious once you hear it, but it rewires how real a lot of institutions feel.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Why We Sleep.jpg" alt="Why We Sleep cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Why We Sleep</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Matthew Walker</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Convinced me sleep deprivation is a real crisis, not just something tired people complain about. Some of his numbers got picked apart by other researchers after this came out, so I&#39;d take the specific stats with a grain of salt, but the core message stuck.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Thinkertoys.jpg" alt="Thinkertoys cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Thinkertoys</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Michael Michalko</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Less a book you read and more a toolbox you raid. A pile of creativity techniques lifted from ad agencies and inventors. Genuinely useful when you&#39;re stuck on a problem and want a structured way to force new angles.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/The Molecule of More.jpg" alt="The Molecule of More cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>The Molecule of More</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Daniel Lieberman &amp; Michael Long</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Dopamine isn&#39;t the feeling good chemical, it&#39;s the wanting more chemical, and it doesn&#39;t care once you&#39;ve actually got the thing. Explains why hitting a goal feels weirdly empty about five minutes later.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Nexus.jpg" alt="Nexus cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Nexus</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Yuval Noah Harari</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Sapiens but about information networks: myths, scripture, printing press, algorithms. The idea that more connectivity and more information were never automatically going to make us wiser is the part I keep coming back to.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/The Nvidia Way.jpg" alt="The Nvidia Way cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>The Nvidia Way</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Tae Kim</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Built off a ton of interviews with Jensen Huang and early Nvidia people. The parts about the company nearly dying multiple times in the &#39;90s are so much more interesting than the recent richest company in the world chapters everyone already knows.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/The Ickabog.jpg" alt="The Ickabog cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>The Ickabog</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>J.K. Rowling</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Lighter, kid aimed fairy tale, but don&#39;t let that fool you. It&#39;s really about two corrupt officials inventing a monster to seize power and terrify a population into obedience. Sharper political commentary than it looks on the cover.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Elon Musk (Ashlee Vance).jpg" alt="Elon Musk cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Elon Musk</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Ashlee Vance</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Written with Musk&#39;s cooperation, so it&#39;s the friendlier of the two Musk biographies. Focuses on how insane the early SpaceX and Tesla bets actually were rather than digging into Musk himself. That&#39;s what the Isaacson book does instead.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/The Idea Factory.jpg" alt="The Idea Factory cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>The Idea Factory</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Jon Gertner</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>History of Bell Labs, the place that basically invented the transistor, the laser, and modern information theory, seemingly by accident of putting brilliant people in one building with no deadline. Nothing like it really exists anymore, which is kind of a bummer.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Undercover Economist.jpg" alt="Undercover Economist cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Undercover Economist</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Tim Harford</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Makes ordinary stuff, coffee prices, used car scams, actually interesting by showing the economics hiding underneath. Good one for seeing market forces in things you normally just walk past.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Surely You're Joking Mr Feynman.jpg" alt="Surely You're Joking, Mr. Feynman cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Surely You&#39;re Joking, Mr. Feynman</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Richard Feynman</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Feynman being Feynman: cracking safes, playing bongos, messing with people, doing physics almost as an afterthought in some chapters. What I actually took from it: he never cared if a question sounded serious before chasing it.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Six Easy Pieces.jpg" alt="Six Easy Pieces cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Six Easy Pieces</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Richard Feynman</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Pulled from his full Lectures on Physics, the more digestible chunks. Good gut check for whether you actually understand something. If you can&#39;t explain it this simply, you don&#39;t, yet.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/This Is Going to Hurt.jpg" alt="This Is Going to Hurt cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>This Is Going to Hurt</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Adam Kay</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Genuinely one of the funniest books I&#39;ve read, until it just isn&#39;t anymore. That whiplash is deliberate. Underneath the jokes it&#39;s a pretty bleak account of how burned out doctors in the NHS actually are.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Atomic Habits.jpg" alt="Atomic Habits cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Atomic Habits</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>James Clear</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Yes, everyone&#39;s already read this. The one idea that actually stuck with me: build systems and identity, not goals. Goals end when you hit them, systems just keep running.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/How Economics Explains the World.jpg" alt="How Economics Explains the World cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>How Economics Explains the World</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Andrew Leigh</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Fast lap through history, agriculture to AI, filtered through economics. Didn&#39;t teach me much new, but it&#39;s a good compressed refresher if you already know the general shape of history and want the economic through line.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Elon Musk (Walter Isaacson).jpg" alt="Elon Musk cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Elon Musk</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Walter Isaacson</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>The messier, more recent Musk biography, deep into the Twitter/X takeover and the &quot;demon mode&quot; stuff. Less flattering than Vance&#39;s version and more willing to sit with the question of whether the same intensity that built SpaceX is now the thing blowing things up.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/Breath.jpg" alt="Breath cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>Breath</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>James Nestor</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Turns out most people breathe wrong, mouth instead of nose, too fast, too shallow, and fixing it does more than it has any right to. One of the few books that actually changed a daily habit of mine instead of just being interesting to read.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/How We Got to Now.jpg" alt="How We Got to Now cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>How We Got to Now</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Steven Johnson</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Traces six inventions, glass, cold, sound, clean, time, light, through chains of consequence nobody could&#39;ve predicted. The &quot;hummingbird effect&quot; idea, one invention causing totally unrelated changes somewhere else entirely, is the one part of this I still think about.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/A Short History of Nearly Everything.jpg" alt="A Short History of Nearly Everything cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>A Short History of Nearly Everything</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Bill Bryson</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Science history told through the odd, petty, lucky people who actually made the discoveries, not just the discoveries themselves. Bryson&#39;s whole move is that the story of how we found something out is usually funnier and messier than the finding.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/On the Origin of Time.jpg" alt="On the Origin of Time cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>On the Origin of Time</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Thomas Hertog</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Hertog was working with Hawking on this right up until Hawking died. The idea is that even the laws of physics themselves evolved rather than being fixed from the start. Dense, slow, had to reread some pages twice, but it&#39;s a genuinely huge idea if it&#39;s right.</p>
+            </div>
+          </article><article class="book-card fade-in" data-astro-cid-yxyljrfl>
+            <div class="book-cover" data-astro-cid-yxyljrfl>
+              <img src="books/The End Is Always Near.jpg" alt="The End Is Always Near cover" loading="lazy" data-astro-cid-yxyljrfl>
+            </div>
+            <div class="book-body" data-astro-cid-yxyljrfl>
+              <h3 class="book-title" data-astro-cid-yxyljrfl>The End Is Always Near</h3>
+              <p class="book-author" data-astro-cid-yxyljrfl>Dan Carlin</p>
+              <p class="book-note" data-astro-cid-yxyljrfl>Carlin walking through history&#39;s near collapses, plagues, nuclear close calls, empires falling apart, and asking how close we actually came each time. Made &quot;we live in uniquely unstable times&quot; sound a lot less unique.</p>
+            </div>
+          </article>
+      </div>
+
+      <div class="books-secondary" data-astro-cid-yxyljrfl>
+        <button class="books-toggle" id="booksToggle" type="button" aria-expanded="false" aria-controls="booksRest" data-astro-cid-yxyljrfl>
+          See everything else I've started <span class="arr" data-astro-cid-yxyljrfl>→</span>
+        </button>
+        <ul class="books-rest-list" id="booksRest" hidden data-astro-cid-yxyljrfl>
+          <li class="books-rest-row" data-astro-cid-yxyljrfl>
+              <span class="books-rest-title" data-astro-cid-yxyljrfl>Mastery</span>
+              
+            </li><li class="books-rest-row" data-astro-cid-yxyljrfl>
+              <span class="books-rest-title" data-astro-cid-yxyljrfl>A Brief History of Time</span>
+              <span class="books-rest-author" data-astro-cid-yxyljrfl>Stephen Hawking</span>
+            </li><li class="books-rest-row" data-astro-cid-yxyljrfl>
+              <span class="books-rest-title" data-astro-cid-yxyljrfl>The Last Gambit</span>
+              
+            </li><li class="books-rest-row" data-astro-cid-yxyljrfl>
+              <span class="books-rest-title" data-astro-cid-yxyljrfl>An Economic History of the World Since 1400</span>
+              
+            </li><li class="books-rest-row" data-astro-cid-yxyljrfl>
+              <span class="books-rest-title" data-astro-cid-yxyljrfl>Wings of Fire</span>
+              <span class="books-rest-author" data-astro-cid-yxyljrfl>A.P.J. Abdul Kalam</span>
+            </li><li class="books-rest-row" data-astro-cid-yxyljrfl>
+              <span class="books-rest-title" data-astro-cid-yxyljrfl>The Founders</span>
+              
+            </li><li class="books-rest-row" data-astro-cid-yxyljrfl>
+              <span class="books-rest-title" data-astro-cid-yxyljrfl>Total Competition</span>
+              <span class="books-rest-author" data-astro-cid-yxyljrfl>Ross Brawn</span>
+            </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+    </main>
+
+    <footer class="footer" data-astro-cid-jo6i4kqk>
+  <div class="container footer-inner" data-astro-cid-jo6i4kqk>
+
+    <!-- Name on the left -->
+    <p class="footer-name" data-astro-cid-jo6i4kqk>Shivank</p>
+
+    <!-- Social / external links in the center -->
+    <div class="footer-links" data-astro-cid-jo6i4kqk>
+      <a href="https://github.com/ShivankC" class="footer-link" target="_blank" rel="noopener" data-astro-cid-jo6i4kqk>GitHub</a>
+    </div>
+
+    <!-- Copyright on the right -->
+    <p class="footer-copy" data-astro-cid-jo6i4kqk>
+      © 2026
+    </p>
+
+  </div>
+</footer>
+  </div>
+
+  <!--
+    Speckle/stipple texture, sitting behind the whole page (z-index:
+    -1, see the style block below) — small dark flecks, not
+    continuous grain. Purely decorative (aria-hidden, pointer-events:
+    none — it can never intercept a click or a hover).
+
+    Deliberately NOT given its own transition:name. That was tried —
+    the intent was to keep it from flickering through the default
+    root fade on navigation, since it's identical on every page — but
+    it backfired: a named element gets captured as an independent
+    snapshot layer that the browser composites on top of everything
+    else while a transition is active, ignoring this element's own
+    z-index for that whole window. The visible symptom was exactly
+    "the specks show up, then vanish fast right after the page
+    settles" — briefly on top of everything during the transition,
+    then correctly hidden behind opaque content again once it ends.
+    Leaving it unnamed means it's just baked into the default root
+    snapshot like ordinary content, which already has the correct
+    z-order baked into its pixels — no separate overlay, no flicker.
+  -->
+  <div class="fleck-overlay" aria-hidden="true" data-astro-cid-z4jru4n3></div>
+
+</body>
+</html>
+
+
+
+<!--
+  SCROLL FADE-IN SCRIPT
+  This runs in the browser (not during build time).
+  It watches for elements with .fade-in or .stagger-children
+  and adds the class .visible when they scroll into view,
+  which triggers the CSS transition defined in global.css.
+-->
+<script type="module">//#region src/layouts/BaseLayout.astro?astro&type=script&index=0&lang.ts
+function initScrollAnimations() {
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				const el = entry.target;
+				[el, ...el.children].forEach((node) => {
+					if (!(node instanceof HTMLElement)) return;
+					node.style.willChange = "transform, opacity";
+					node.addEventListener("transitionend", function clearWillChange(e) {
+						if (e.target !== node) return;
+						if (node.getAnimations().length > 0) return;
+						node.style.willChange = "";
+						node.removeEventListener("transitionend", clearWillChange);
+					});
+				});
+				el.classList.add("visible");
+				observer.unobserve(el);
+			}
+		});
+	}, {
+		threshold: .08,
+		rootMargin: "0px 0px -40px 0px"
+	});
+	document.querySelectorAll(".fade-in, .stagger-children").forEach((el) => {
+		observer.observe(el);
+	});
+}
+initScrollAnimations();
+document.addEventListener("astro:page-load", initScrollAnimations);
+function navOrder() {
+	return Array.from(document.querySelectorAll(".nav-link")).map((a) => new URL(a.href).pathname);
+}
+function indexOfPath(order, pathname) {
+	return order.findIndex((p) => pathname === p || p !== "/" && pathname.startsWith(p));
+}
+document.addEventListener("astro:before-preparation", (event) => {
+	const root = document.documentElement;
+	const e = event;
+	const order = navOrder();
+	const fromIdx = indexOfPath(order, e.from?.pathname ?? "");
+	const toIdx = indexOfPath(order, e.to?.pathname ?? "");
+	if (fromIdx === -1 || toIdx === -1 || fromIdx === toIdx) {
+		root.removeAttribute("data-astro-reel");
+		root.removeAttribute("data-astro-reel-jumps");
+		return;
+	}
+	root.setAttribute("data-astro-reel", toIdx > fromIdx ? "up" : "down");
+	const jumps = Math.min(4, Math.abs(toIdx - fromIdx));
+	root.setAttribute("data-astro-reel-jumps", String(jumps));
+});
+//#endregion</script>
+
+<script type="module">//#region src/pages/books.astro?astro&type=script&index=0&lang.ts
+function initBooksToggle() {
+	const btn = document.getElementById("booksToggle");
+	const list = document.getElementById("booksRest");
+	if (!btn || !list) return;
+	btn.addEventListener("click", () => {
+		const isOpen = list.hidden === false;
+		list.hidden = isOpen;
+		btn.setAttribute("aria-expanded", String(!isOpen));
+	});
+}
+document.addEventListener("astro:page-load", initBooksToggle);
+//#endregion</script>

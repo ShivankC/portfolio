@@ -1,0 +1,1117 @@
+@keyframes astroFadeInOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes astroFadeIn {
+	from {
+		opacity: 0;
+		mix-blend-mode: plus-lighter;
+	}
+	to {
+		opacity: 1;
+		mix-blend-mode: plus-lighter;
+	}
+}
+
+@keyframes astroFadeOut {
+	from {
+		opacity: 1;
+		mix-blend-mode: plus-lighter;
+	}
+	to {
+		opacity: 0;
+		mix-blend-mode: plus-lighter;
+	}
+}
+
+@keyframes astroSlideFromRight {
+	from {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes astroSlideFromLeft {
+	from {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes astroSlideToRight {
+	to {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes astroSlideToLeft {
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@media (prefers-reduced-motion) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+
+	[data-astro-transition-scope] {
+		animation: none !important;
+	}
+}
+.nav-center-notch[data-astro-cid-wpvy4v7s] {
+  position: fixed;
+  top: 50%;
+  left: calc(var(--nav-offset) + (var(--nav-collapsed-width) - 44px) / 2);
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background-color: #b5a47d;
+  border-radius: 50%;
+  z-index: 99;
+}
+
+.nav-capsule-bg[data-astro-cid-wpvy4v7s] {
+  position: fixed;
+  top: 50%;
+  left: var(--nav-offset);
+  transform: translateY(calc(-50% + var(--nav-y)));
+  z-index: 98;
+  width: var(--nav-collapsed-width);
+  border-radius: 999px;
+  background-color: #ede8dfb8;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 10px 30px #1a1a1a14;
+}
+
+.nav-capsule[data-astro-cid-wpvy4v7s] {
+  position: fixed;
+  top: 50%;
+  left: var(--nav-offset);
+  transform: translateY(calc(-50% + var(--nav-y)));
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  width: var(--nav-collapsed-width);
+  padding: var(--space-5) 0;
+  border-radius: 999px;
+  background-color: #ede8dfb8;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 10px 30px #1a1a1a14;
+}
+
+@media (width >= 781px) {
+  .nav-capsule[data-astro-cid-wpvy4v7s] {
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-capsule[data-astro-cid-wpvy4v7s], html:not([data-astro-nav-entered]) .nav-capsule-bg[data-astro-cid-wpvy4v7s] {
+    animation: navCapsuleEnter .65s var(--ease-out) .15s both;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s] {
+    animation: navItemEnter .32s var(--ease-out) both;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:first-child {
+    animation-delay: .15s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(2) {
+    animation-delay: .24s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(3) {
+    animation-delay: .33s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(4) {
+    animation-delay: .42s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(5) {
+    animation-delay: .51s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(6) {
+    animation-delay: .6s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(7) {
+    animation-delay: .69s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(8) {
+    animation-delay: .78s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(9) {
+    animation-delay: .87s;
+  }
+}
+
+@keyframes navCapsuleEnter {
+  from {
+    transform: translate(-40px, calc(-50% + var(--nav-y)));
+  }
+
+  to {
+    transform: translate(0,    calc(-50% + var(--nav-y)));
+  }
+}
+
+@keyframes navItemEnter {
+  from {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.nav-top[data-astro-cid-wpvy4v7s] {
+  display: none;
+}
+
+.nav-logo[data-astro-cid-wpvy4v7s] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--fg);
+  color: var(--bg);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .8rem;
+  transition: background-color var(--duration-slow) var(--ease-out);
+}
+
+.nav-logo[data-astro-cid-wpvy4v7s]:hover {
+  background-color: var(--accent);
+}
+
+.nav-links[data-astro-cid-wpvy4v7s] {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-link[data-astro-cid-wpvy4v7s] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--nav-row-height);
+  color: var(--fg-muted);
+}
+
+.nav-link[data-astro-cid-wpvy4v7s].active {
+  color: var(--fg);
+}
+
+.nav-icon-wrap[data-astro-cid-wpvy4v7s] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition: background-color var(--duration-slow) var(--ease-out),
+      transform         var(--duration-slow) var(--ease-out);
+}
+
+.nav-link[data-astro-cid-wpvy4v7s]:hover .nav-icon-wrap[data-astro-cid-wpvy4v7s] {
+  background-color: #1a1a1a0f;
+  transform: scale(1.18);
+}
+
+.nav-icon[data-astro-cid-wpvy4v7s] {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.nav-link[data-astro-cid-wpvy4v7s].active .nav-icon[data-astro-cid-wpvy4v7s] {
+  color: var(--accent);
+}
+
+.nav-label[data-astro-cid-wpvy4v7s] {
+  position: absolute;
+  left: calc(100% + var(--space-3));
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  white-space: nowrap;
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--fg);
+  background-color: var(--bg-subtle);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px #1a1a1a14;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity   var(--duration-slow) var(--ease-out),
+      transform var(--duration-slow) var(--ease-out);
+}
+
+.nav-link[data-astro-cid-wpvy4v7s]:hover .nav-label[data-astro-cid-wpvy4v7s], .nav-link[data-astro-cid-wpvy4v7s]:focus-visible .nav-label[data-astro-cid-wpvy4v7s] {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.menu-btn[data-astro-cid-wpvy4v7s] {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.bar[data-astro-cid-wpvy4v7s] {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--fg);
+  transform-origin: center;
+  transition: transform var(--duration-base) var(--ease-out),
+      opacity   var(--duration-base) var(--ease-out);
+}
+
+.menu-btn[data-astro-cid-wpvy4v7s].open .bar-top[data-astro-cid-wpvy4v7s] {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-btn[data-astro-cid-wpvy4v7s].open .bar-mid[data-astro-cid-wpvy4v7s] {
+  opacity: 0;
+}
+
+.menu-btn[data-astro-cid-wpvy4v7s].open .bar-bot[data-astro-cid-wpvy4v7s] {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu[data-astro-cid-wpvy4v7s] {
+  display: none;
+}
+
+.mobile-menu[data-astro-cid-wpvy4v7s].open {
+  display: block;
+  position: fixed;
+  top: var(--topbar-height);
+  left: 0;
+  right: 0;
+  background-color: var(--bg);
+  padding: var(--space-3) 0 var(--space-4);
+}
+
+.mobile-link[data-astro-cid-wpvy4v7s] {
+  display: block;
+  padding: var(--space-3) var(--site-padding);
+  font-size: .9375rem;
+  color: var(--fg-muted);
+  transition: color            var(--duration-quick),
+      background-color var(--duration-quick);
+}
+
+.mobile-link[data-astro-cid-wpvy4v7s]:hover, .mobile-link[data-astro-cid-wpvy4v7s].active {
+  color: var(--fg);
+  background-color: var(--bg-hover);
+}
+
+@media (width <= 780px) {
+  .nav-center-notch[data-astro-cid-wpvy4v7s], .nav-capsule-bg[data-astro-cid-wpvy4v7s] {
+    display: none;
+  }
+
+  .nav-capsule[data-astro-cid-wpvy4v7s] {
+    top: 0;
+    left: 0;
+    transform: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    height: var(--topbar-height);
+    padding: 0 var(--site-padding);
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #0000;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background-color var(--duration-base) var(--ease-out),
+        backdrop-filter   var(--duration-base) var(--ease-out);
+  }
+
+  .nav-capsule[data-astro-cid-wpvy4v7s].scrolled {
+    background-color: #ede8dfdb;
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+  }
+
+  .nav-top[data-astro-cid-wpvy4v7s] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    gap: var(--space-4);
+  }
+
+  .nav-links[data-astro-cid-wpvy4v7s] {
+    display: none;
+  }
+
+  .menu-btn[data-astro-cid-wpvy4v7s] {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-astro-nav-entered]) .nav-capsule[data-astro-cid-wpvy4v7s], html:not([data-astro-nav-entered]) .nav-capsule-bg[data-astro-cid-wpvy4v7s], html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s] {
+    animation: none;
+  }
+
+  .nav-logo[data-astro-cid-wpvy4v7s], .nav-icon-wrap[data-astro-cid-wpvy4v7s], .nav-label[data-astro-cid-wpvy4v7s] {
+    transition: none;
+  }
+}
+.footer[data-astro-cid-jo6i4kqk] {
+  border-top: 1px solid var(--border);
+  padding: var(--space-8) 0;
+  margin-top: var(--space-16);
+}
+
+.footer-inner[data-astro-cid-jo6i4kqk] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.footer-name[data-astro-cid-jo6i4kqk] {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--fg-muted);
+  max-width: none;
+}
+
+.footer-links[data-astro-cid-jo6i4kqk] {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer-link[data-astro-cid-jo6i4kqk] {
+  font-size: .8125rem;
+  color: var(--fg-subtle);
+  transition: color var(--duration-quick);
+}
+
+.footer-link[data-astro-cid-jo6i4kqk]:hover {
+  color: var(--fg);
+}
+
+.footer-copy[data-astro-cid-jo6i4kqk] {
+  font-size: .75rem;
+  color: var(--fg-subtle);
+  max-width: none;
+}
+
+@media (width <= 600px) {
+  .footer-inner[data-astro-cid-jo6i4kqk] {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+/* =============================================================
+   DESIGN SYSTEM — global.css
+
+   This is the visual foundation for the entire site.
+   Think of it as the "rulebook" for how everything looks.
+
+   How it's organised:
+   1. TOKENS      — colors, fonts, spacing (change these to retheme)
+   2. RESET       — clear browser defaults so we start clean
+   3. BASE        — base HTML element styles (h1, p, a, img...)
+   4. LAYOUT      — reusable layout helpers (.container, .section)
+   5. TRANSITIONS — custom page-change animations
+   6. ANIMATIONS  — scroll fade-in, hover effects
+   7. UTILITIES   — small reusable style helpers
+   ============================================================= */
+
+
+/* =============================================================
+   1. TOKENS
+   All colors, fonts, and spacing defined as CSS "custom
+   properties" (also called CSS variables). Changing a value
+   here changes it everywhere on the site at once.
+   ============================================================= */
+
+/* Fonts are loaded via <link> tags in BaseLayout.astro's <head>
+   (with a <link rel="preconnect"> before them for speed), not with
+   an @import here. Loading them twice would mean two separate
+   downloads of the same font files — wasteful, and @import also
+   blocks CSS parsing until it resolves. The names below just need
+   to match what's requested in BaseLayout.astro.                  */
+
+:root {
+
+  /* -----------------------------------------------------------
+     COLORS — temporary placeholder palette.
+     Warm beige background, near-black text, one accent color.
+     Every name below (--bg, --fg, etc.) stays the same even
+     after you pick a real palette — only the hex values change.
+     ----------------------------------------------------------- */
+
+  /* Backgrounds — from lightest to slightly deeper              */
+  --bg:           #EDE8DF;  /* Main background: warm beige       */
+  --bg-subtle:    #E4DCCB;  /* Slightly deeper: alternating blocks, panels */
+  --bg-hover:     #DAD0B9;  /* Hover state background            */
+
+  /* Text — from darkest to most muted                           */
+  --fg:           #1A1A1A;  /* Primary text: near-black          */
+  --fg-muted:     #6B6459;  /* Secondary: labels, captions       */
+  --fg-subtle:    #A39C8C;  /* Tertiary: faint text, hints       */
+
+  /* Borders                                                      */
+  --border:       rgba(26, 26, 26, 0.14);  /* Dividers, card edges       */
+  --border-soft:  rgba(26, 26, 26, 0.08);  /* Very subtle borders        */
+
+  /* ┌─────────────────────────────────────────────────────┐
+     │  ACCENT SYSTEM — violet + gold.                     │
+     │  Two brand colors are defined; only violet is in    │
+     │  use right now. Everything that renders an accent    │
+     │  reads --accent, which points at --accent-primary,   │
+     │  so swapping the whole site's accent is a one-line    │
+     │  change (repoint --accent, or edit the hex below).   │
+     └─────────────────────────────────────────────────────┘ */
+  --accent-primary:   #6D4AE0;  /* Electric violet — the active accent */
+  --accent-secondary: #D9A521;  /* Bright gold — used on the Projects timeline
+                                    (thread/nodes on beige, borders/accents on
+                                    near-black). Brighter than the old muted
+                                    #B08423, but tuned down from a paler gold
+                                    like #E6C06A so it still has contrast on
+                                    beige instead of washing out.            */
+
+  /* The generic accent hooks every component already reads. Point
+     these at whichever brand color should currently be "the accent."
+     Today that's violet. */
+  --accent:       var(--accent-primary);
+  --accent-dim:   rgba(109, 74, 224, 0.10);       /* Low-opacity violet tint */
+
+  /* -----------------------------------------------------------
+     FONTS
+     Nunito + Nunito Sans are a matched pair from the same type
+     family — Nunito has warm, slightly rounded terminals (used
+     here for headings, at confident weights so it stays credible
+     rather than soft/childish); Nunito Sans is its more neutral
+     companion, built for body copy and UI text. Same warmth,
+     tuned for two different jobs.
+     --font-display: Headings and other expressive/large text.
+     --font-body:    Body copy, labels, nav, everything else.
+     ----------------------------------------------------------- */
+  --font-display: 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-body:    'Nunito Sans', system-ui, -apple-system, sans-serif;
+  --font-meta:    'Inter', system-ui, -apple-system, sans-serif; /* small technical labels (Projects tags/dates) */
+
+  /* -----------------------------------------------------------
+     SPACING SCALE
+     Based on 4px units (0.25rem = 4px at default browser size).
+     Use these for margin, padding, and gap — not raw numbers.
+     --space-4 = 1rem = 16px  |  --space-16 = 4rem = 64px
+     ----------------------------------------------------------- */
+  --space-1:   0.25rem;    /*  4px */
+  --space-2:   0.5rem;     /*  8px */
+  --space-3:   0.75rem;    /* 12px */
+  --space-4:   1rem;       /* 16px */
+  --space-5:   1.25rem;    /* 20px */
+  --space-6:   1.5rem;     /* 24px */
+  --space-8:   2rem;       /* 32px */
+  --space-10:  2.5rem;     /* 40px */
+  --space-12:  3rem;       /* 48px */
+  --space-16:  4rem;       /* 64px */
+  --space-20:  5rem;       /* 80px */
+  --space-24:  6rem;       /* 96px */
+  --space-32:  8rem;       /* 128px */
+
+  /* -----------------------------------------------------------
+     LAYOUT
+     --site-max:            Maximum width of the centered content column
+     --site-padding:        Side padding on smaller screens
+     --nav-offset:          Gap between the screen edge and the capsule
+     --nav-collapsed-width: Width of the floating nav capsule (fixed —
+                             it no longer expands, only individual
+                             icons react on hover)
+     --nav-clearance:       Extra left padding so ordinary content never
+                             sits underneath the capsule — used on
+                             desktop only, see .container below and the
+                             matching rule in index.astro's hero.
+     --topbar-height:       Height of the collapsed top bar (mobile)
+     ----------------------------------------------------------- */
+  --site-max:             1120px;
+  --site-padding:         clamp(var(--space-6), 5vw, var(--space-16));
+  --nav-offset:           clamp(1rem, 3vw, 2rem);
+  --nav-collapsed-width:  64px;
+  --nav-clearance:        calc(var(--nav-offset) + var(--nav-collapsed-width) + var(--space-6));
+  --topbar-height:        60px;
+
+  /* -----------------------------------------------------------
+     ANIMATION TIMING
+     Reusable easing curves and durations.
+     --ease-out: Starts fast, slows to a stop (most natural feel).
+     ----------------------------------------------------------- */
+  --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-quick: 120ms;
+  --duration-base:  240ms;
+  --duration-slow:  420ms;
+
+  /* ── "Film reel" page-transition timing ─────────────────────
+     ONE duration and ONE easing shared by BOTH the page-content
+     slide AND the nav-dial rotation, so they move as a single
+     coordinated motion (same start is guaranteed by them being
+     driven by the same View Transition; same duration/easing is
+     guaranteed by both reading these two variables). Never give
+     the dial and the page different timing values — that's how
+     they'd visibly desync.
+     --reel-ease has a small overshoot (the second value, 1.12, is
+     just above 1) for a gentle "settle" at the end. Conservative
+     on purpose — raise that 1.12 toward ~1.3 for more bounce,
+     lower toward 1.0 to remove it. */
+  --reel-duration:  480ms;
+  --reel-ease:      cubic-bezier(0.32, 1.12, 0.62, 1);
+  /* The page slide is delayed by this much relative to the nav dial
+     (the dial has no delay), so the dial visibly starts first and
+     feels like it's driving the page. Keep it small — 50–80ms. */
+  --reel-lead:      65ms;
+
+  /* -----------------------------------------------------------
+     FLECK — the speckle/stipple texture overlay (see
+     BaseLayout.astro). It's built from TWO layers — a dense field
+     of small flecks plus a sparse scatter of larger organic flakes
+     — which is what keeps it from looking like one uniform grain.
+     Dials:
+     --fleck-opacity: overall visibility of the whole texture.
+       0 = invisible (fastest way to turn the effect off without
+       deleting anything). Applies to both layers together.
+     --fleck-scale: tile size of the SMALL-fleck layer. SMALLER =
+       denser (the tile's fixed fleck pattern repeats more often
+       across the screen); LARGER = sparser.
+     --fleck-scale-large: tile size of the SCATTERED medium-flake
+       layer. Kept large (a big repeat period) on purpose — that's
+       what stops the sparser flakes from reading as a repeating
+       grid. Larger = flakes bigger AND repeat period longer;
+       smaller = flakes smaller but grid starts to show. If the grid
+       ever becomes visible again, raise this rather than lowering it.
+     ----------------------------------------------------------- */
+  --fleck-opacity: 0.95;
+  --fleck-scale: 128px;
+  --fleck-scale-large: 760px;
+}
+
+
+/* =============================================================
+   2. RESET
+   Clear out the different defaults browsers apply. Without
+   this, padding, margins, and box-sizing would be inconsistent.
+   ============================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;            /* Smooth scroll to anchor links    */
+  -webkit-font-smoothing: antialiased; /* Crisper text rendering on Mac   */
+  text-rendering: optimizeLegibility;
+
+  /* This matters more than it looks like it should: without an
+     explicit background-color here, the CSS spec "propagates" the
+     body's background up to paint the actual viewport canvas, and
+     body's own box then renders as transparent for its own stacking
+     context. The fleck overlay (in BaseLayout.astro) is a child of
+     body using mix-blend-mode, which blends against body's box — if
+     that box has no real background of its own (color lifted out to
+     the canvas instead), the blend has nothing to act on and
+     produces nothing visible, no matter how correct the overlay's
+     own CSS is. Setting the same color here stops the propagation. */
+  background-color: var(--bg);
+}
+
+body {
+  /* position: relative + an explicit z-index makes body establish
+     its OWN stacking context (and a containing block for absolutely-
+     positioned children). This is what lets the fleck texture overlay
+     — see .fleck-overlay in BaseLayout.astro — sit at z-index: -1 and
+     paint ABOVE body's own beige background but BELOW page content.
+     Without it, that overlay's negative z-index would resolve in the
+     root <html> stacking context, where body's opaque background
+     paints on top of it and hides it completely. */
+  position: relative;
+  z-index: 0;
+
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-weight: 400;   /* Nunito Sans reads best at Regular, not Light */
+  font-size: 1rem;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+
+/* =============================================================
+   3. BASE — Styles for raw HTML elements
+   ============================================================= */
+
+/* Headings use the display (rounded, warm) font, at a confident
+   Bold weight — Nunito at Regular weight can look soft/thin at
+   large sizes, Bold keeps it feeling credible rather than dainty.
+   clamp() makes them scale smoothly with the viewport width:
+   clamp(MIN, PREFERRED, MAX)                                   */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--fg);
+}
+
+h1 { font-size: clamp(2.75rem, 7vw, 6rem);  }
+h2 { font-size: clamp(2rem,    4vw, 3.25rem); }
+h3 { font-size: clamp(1.5rem,  3vw, 2.25rem); }
+
+/* Paragraph: cap width at ~66 characters for comfortable reading */
+p {
+  max-width: 66ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove bullet points and padding from lists by default.
+   Re-add list styles where needed with explicit classes.     */
+ul, ol {
+  list-style: none;
+}
+
+
+/* =============================================================
+   4. LAYOUT UTILITIES
+   These classes can be applied to any element.
+   ============================================================= */
+
+/* .container: Centers content horizontally with max-width.
+   Apply this to the inner div inside each <section>.          */
+.container {
+  width: 100%;
+  max-width: var(--site-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+}
+
+/* On wide viewports, .container's own centering usually leaves plenty
+   of room before the nav capsule. On moderate desktop widths (close
+   to --site-max, where that centering margin shrinks toward zero) it
+   doesn't — so on any desktop-width screen, always reserve enough
+   extra left padding to clear the collapsed capsule. Mobile doesn't
+   need this at all, since the capsule doesn't exist there.         */
+@media (min-width: 781px) {
+  .container {
+    padding-left: calc(var(--site-padding) + var(--nav-clearance));
+  }
+}
+
+/* .section: Adds vertical breathing room between page sections */
+.section {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+/* .section-label: The small uppercase eyebrow above a heading.
+   Example: "SELECTED WORK" above "Things I've built."         */
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;   /* 11px */
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+/* .section-heading: The main h2 inside a section */
+.section-heading {
+  margin-bottom: var(--space-12);
+}
+
+/* .divider: A subtle horizontal rule between sections */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+
+/* =============================================================
+   5. PAGE TRANSITION ANIMATIONS
+   These CSS animations control what happens when you navigate
+   between pages. Astro's View Transitions API hooks into these
+   special `::view-transition-*` pseudo-elements automatically.
+   ============================================================= */
+
+/* ── "Film reel spool" page transition ──────────────────────
+   The whole page content slides vertically, in the SAME direction
+   the nav dial rotates. Two things scale with how far you jump
+   across the nav (|from index − to index|, clamped to 1..4):
+
+   1. DISTANCE. An adjacent hop travels one viewport; a jump across
+      the whole nav travels much further. Duration stays constant
+      (--reel-duration), so far jumps move FASTER — that speed is
+      the whole point.
+
+   2. "MOTION BLUR", done the GPU-cheap way. A real filter: blur()
+      re-rasterizes a viewport-sized snapshot every frame and stutters
+      on long jumps / mobile — exactly what we must avoid. Instead the
+      blur is APPROXIMATED with two compositor-only properties that
+      never trigger re-raster: a vertical scaleY STRETCH (smears the
+      content along the direction of travel) plus an OPACITY dip (makes
+      the fast-moving content a translucent streak). Both scale with
+      speed: an adjacent hop barely stretches/fades; a full jump
+      stretches and fades hard, so it spools past as an unreadable
+      smear and only resolves sharp (scaleY 1, opacity 1) as it settles.
+
+   Direction comes from JS (see BaseLayout.astro) as
+   data-astro-reel="up" | "down" (the direction CONTENT slides), and
+   the magnitude from data-astro-reel-jumps="1..4". Both are
+   "data-astro-" prefixed because Astro's DOM swap wipes any <html>
+   attribute that isn't, midway through the transition. The magnitude
+   attribute maps to the three tunables below — adjust these four rows
+   to taste (bigger --reel-stretch / lower --reel-min-opacity = more
+   blur; bigger --reel-distance = faster spool). */
+
+html[data-astro-reel-jumps="1"] { --reel-distance: 100%; --reel-stretch: 1.06; --reel-min-opacity: 0.9; }
+html[data-astro-reel-jumps="2"] { --reel-distance: 150%; --reel-stretch: 1.18; --reel-min-opacity: 0.78; }
+html[data-astro-reel-jumps="3"] { --reel-distance: 200%; --reel-stretch: 1.30; --reel-min-opacity: 0.68; }
+html[data-astro-reel-jumps="4"] { --reel-distance: 250%; --reel-stretch: 1.42; --reel-min-opacity: 0.6; }
+
+/* The moving state is (far away · stretched · faded); the settled
+   state is (in place · unstretched · opaque · sharp). Exit goes
+   settled→moving, enter goes moving→settled. */
+@keyframes reelExitUp    { from { transform: translateY(0) scaleY(1); opacity: 1; }
+                           to   { transform: translateY(calc(-1 * var(--reel-distance))) scaleY(var(--reel-stretch)); opacity: var(--reel-min-opacity); } }
+@keyframes reelEnterUp   { from { transform: translateY(var(--reel-distance)) scaleY(var(--reel-stretch)); opacity: var(--reel-min-opacity); }
+                           to   { transform: translateY(0) scaleY(1); opacity: 1; } }
+@keyframes reelExitDown  { from { transform: translateY(0) scaleY(1); opacity: 1; }
+                           to   { transform: translateY(var(--reel-distance)) scaleY(var(--reel-stretch)); opacity: var(--reel-min-opacity); } }
+@keyframes reelEnterDown { from { transform: translateY(calc(-1 * var(--reel-distance))) scaleY(var(--reel-stretch)); opacity: var(--reel-min-opacity); }
+                           to   { transform: translateY(0) scaleY(1); opacity: 1; } }
+
+/* Fallback for any navigation where a direction can't be derived
+   (e.g. to/from a page not in the nav order): a plain quick fade. */
+@keyframes reelFadeOut { to   { opacity: 0; } }
+@keyframes reelFadeIn  { from { opacity: 0; } }
+::view-transition-old(root) { animation: reelFadeOut var(--duration-base) ease both; }
+::view-transition-new(root) { animation: reelFadeIn  var(--duration-base) ease both; }
+
+/* On far jumps the two snapshots don't cover the whole viewport at
+   once (they travel further than one screen), so paint the transition
+   backdrop beige — any exposed sliver is then the same beige as the
+   page and reads as motion, not a hole. It's also what the opacity
+   dip fades the streaking content toward. */
+::view-transition { background-color: var(--bg); }
+
+/* Directional spool — the html[data-astro-reel=…] prefix out-specifies
+   the fade fallback. Duration + easing (with the settle overshoot)
+   are the SAME --reel-* vars the nav dial uses. --reel-lead delays the
+   PAGE slightly so the dial starts first and appears to drive it.
+   Gated behind no-preference: when reduced motion is on, none of this
+   exists and the plain fade above takes over. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-astro-reel="up"]::view-transition-old(root)   { animation: reelExitUp    var(--reel-duration) var(--reel-ease) var(--reel-lead) both; }
+  html[data-astro-reel="up"]::view-transition-new(root)   { animation: reelEnterUp   var(--reel-duration) var(--reel-ease) var(--reel-lead) both; }
+  html[data-astro-reel="down"]::view-transition-old(root) { animation: reelExitDown  var(--reel-duration) var(--reel-ease) var(--reel-lead) both; }
+  html[data-astro-reel="down"]::view-transition-new(root) { animation: reelEnterDown var(--reel-duration) var(--reel-ease) var(--reel-lead) both; }
+}
+
+/* The nav (the whole floating capsule) is matched by transition:name
+   (see Nav.astro) — we WANT the browser's automatic position
+   animation for it, since the entire pill physically slides up or
+   down between pages to bring the active page's icon to center; we
+   just tune the timing. By default the browser also cross-fades
+   old/new content within that moving group — we don't want that
+   here, we want it to read as one solid pill sliding, not two images
+   dissolving into each other. Setting both old/new to a plain,
+   un-animated full opacity (with normal blending, overriding the
+   browser's default "plus-lighter" blend used for crossfades) means
+   the new page's capsule — fully opaque, stacked on top — is all you
+   ever see, while the *position* still animates via the group below. */
+::view-transition-group(nav) {
+  /* Same --reel-* timing as the page slide above, so the dial
+     rotation and the page slide are one coordinated motion (same
+     start, duration, easing — including the settle/overshoot). */
+  animation-duration: var(--reel-duration);
+  animation-timing-function: var(--reel-ease);
+}
+
+::view-transition-old(nav),
+::view-transition-new(nav) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* nav-bg is the capsule's glass surface — a separate element from
+   nav (the icons) so it can render behind the center notch — but it
+   needs to slide in exact lockstep with nav, so it gets the identical
+   treatment here.                                                  */
+::view-transition-group(nav-bg) {
+  animation-duration: var(--reel-duration);
+  animation-timing-function: var(--reel-ease);
+}
+
+::view-transition-old(nav-bg),
+::view-transition-new(nav-bg) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Reduced motion: the directional slides above simply don't apply
+   (they're gated behind no-preference), so the page falls back to
+   the plain fade defined at the top of this section. Here we only
+   also stop the dial from animating — it snaps straight to its new
+   position instead of rotating. Result: a plain fade + instant dial,
+   no sliding anywhere. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(nav),
+  ::view-transition-group(nav-bg) {
+    animation: none;
+  }
+}
+
+/* The center-line notch (see Nav.astro) is identical on every page,
+   so it should never visibly react to navigation at all — this
+   keeps it out of the default root crossfade every unnamed element
+   gets, so it reads as a fixed, permanent part of the screen rather
+   than something that flickers between pages.                     */
+::view-transition-old(nav-notch),
+::view-transition-new(nav-notch) {
+  animation: none;
+}
+
+/* Note: the fleck overlay (see BaseLayout.astro) deliberately does
+   NOT get a rule like the ones above. Naming it for View Transitions
+   turned out to cause the exact flicker this pattern is meant to
+   prevent — see the long comment on that element for why. Leaving
+   it unnamed, folded into the default root snapshot, is correct here. */
+
+
+/* =============================================================
+   6. SCROLL FADE-IN ANIMATIONS
+
+   How this works:
+   - Elements with .fade-in start invisible (opacity: 0)
+   - JavaScript in BaseLayout watches them with IntersectionObserver
+   - When they scroll into view, the script adds the class .visible
+   - The CSS transition then animates them into view
+
+   .stagger-children: Same idea but each child animates with a
+   slight delay after the previous one.
+   ============================================================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity  var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Children of .stagger-children each start invisible */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity  var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+/* When .visible is added to the parent, each child animates
+   in sequence with a small delay between them              */
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0ms;   }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 80ms;  }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 160ms; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 240ms; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 320ms; }
+
+.stagger-children.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion: skip the scroll-in entirely — elements are just
+   present and visible from the start, no fade or rise. */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in.visible,
+  .stagger-children > *,
+  .stagger-children.visible > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* =============================================================
+   7. INTERACTION UTILITIES
+   ============================================================= */
+
+/* .link-hover: An animated underline that slides in on hover.
+   Apply to text links for a tasteful hover effect.            */
+.link-hover {
+  position: relative;
+  color: var(--fg-muted);
+  transition: color var(--duration-quick);
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--accent);
+  transition: width var(--duration-base) var(--ease-out);
+}
+
+.link-hover:hover {
+  color: var(--fg);
+}
+
+.link-hover:hover::after {
+  width: 100%;
+}
+
+/* .img-hover: Subtle scale + brightness lift on hover.
+   Wrap an <img> in a div with this class.                     */
+.img-hover {
+  overflow: hidden; /* Clip the image so scale doesn't overflow */
+}
+
+.img-hover img {
+  transition:
+    transform  var(--duration-slow) var(--ease-out),
+    filter     var(--duration-slow) var(--ease-out);
+  filter: brightness(0.88);
+  will-change: transform;
+}
+
+.img-hover:hover img {
+  transform: scale(1.04);
+  filter: brightness(1);
+}
+
+/* .btn: Base button style */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;   /* 13px */
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background-color var(--duration-quick),
+    color            var(--duration-quick),
+    border-color     var(--duration-quick);
+}
+
+/* Filled button */
+.btn--primary {
+  background-color: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.btn--primary:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+/* Ghost / outline button */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--fg-muted);
+  border-color: var(--border);
+}
+
+.btn--ghost:hover {
+  color: var(--fg);
+  border-color: var(--fg-subtle);
+}
+@media (width <= 780px) {
+  .page-content[data-astro-cid-z4jru4n3] {
+    padding-top: var(--topbar-height);
+  }
+}
+
+.fleck-overlay[data-astro-cid-z4jru4n3] {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--fleck-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'200'%20height%3D'200'%3E%3Cfilter%20id%3D's'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.75'%20numOctaves%3D'2'%20seed%3D'4'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20type%3D'matrix'%20values%3D'0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%201%200%200%200%200'%2F%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D'discrete'%20tableValues%3D'0%200%200%200%201'%2F%3E%3C%2FfeComponentTransfer%3E%3CfeComposite%20in%3D'SourceGraphic'%20operator%3D'in'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'%23241D15'%20filter%3D'url(%23s)'%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'900'%20height%3D'900'%3E%3Cfilter%20id%3D'm'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.22'%20numOctaves%3D'3'%20seed%3D'23'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20type%3D'matrix'%20values%3D'0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%201%200%200%200%200'%2F%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D'discrete'%20tableValues%3D'0%200%200%200%200%200%200%200%200.6%201'%2F%3E%3C%2FfeComponentTransfer%3E%3CfeComposite%20in%3D'SourceGraphic'%20operator%3D'in'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'%232A2018'%20filter%3D'url(%23m)'%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'900'%20height%3D'900'%3E%3Cfilter%20id%3D't'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.22'%20numOctaves%3D'3'%20seed%3D'47'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20type%3D'matrix'%20values%3D'0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%201%200%200%200%200'%2F%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D'discrete'%20tableValues%3D'0%200%200%200%200%200.6%200.8%201'%2F%3E%3C%2FfeComponentTransfer%3E%3CfeComposite%20in%3D'SourceGraphic'%20operator%3D'in'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'%23DCD2BC'%20filter%3D'url(%23t)'%2F%3E%3C%2Fsvg%3E");
+  background-repeat: repeat, repeat, repeat;
+  background-size: var(--fleck-scale) var(--fleck-scale),
+      var(--fleck-scale-large) var(--fleck-scale-large),
+      var(--fleck-scale-large) var(--fleck-scale-large);
+}
