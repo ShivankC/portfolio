@@ -68,4 +68,5 @@ The comment `<ClientRouter /> intentionally removed` in the page heads is delibe
 ## Gotchas
 
 - **`* 2.*` files are junk.** ~38 files/folders carry a `" 2"` suffix (e.g. `projects/globetrek 2.png`, `awards/academics 2/`) — macOS/sync duplication artifacts. They are **not referenced** by any HTML, and some folders have restricted permissions. Ignore them; never edit them thinking they're the live asset. The referenced version is the one without the `" 2"` suffix.
-- No `.gitignore` and no deploy config (no CNAME/netlify/vercel) — the repo is the deployable artifact as-is.
+- No `.gitignore`, and no build/deploy tooling (no netlify/vercel) — the repo IS the deployable artifact, served as-is.
+- **Pushing to `main` publishes.** GitHub Pages serves this repo at **https://shivankchawla.com** (custom domain via the tracked `CNAME` file). There is no staging step and no PR gate: a push to `main` is a production deploy, and it lands roughly a minute later. Preview locally with the http server above before pushing.
