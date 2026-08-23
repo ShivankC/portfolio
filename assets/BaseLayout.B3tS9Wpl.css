@@ -1,3 +1,17 @@
+/* ── Native cross-document (MPA) view transitions ────────────
+   Opt this multi-page site into the browser's built-in view
+   transitions on same-origin navigations. This is the switch that
+   actually runs the ::view-transition-*(root) film-reel spool and the
+   ::view-transition-group(nav) dial-slide defined further down — those
+   only animate DURING a view transition, and with no SPA router on the
+   page, THIS at-rule is what starts one on an ordinary full-page
+   navigation. Direction and magnitude come from the html[data-astro-reel]
+   / [data-astro-reel-jumps] attributes set in assets/nav.js. Browsers
+   without support just navigate instantly (no reel, no breakage);
+   reduced motion is honored by the rules near the top of this file.
+   NOTE: does not run over file:// — preview with a local http server. */
+@view-transition { navigation: auto; }
+
 @keyframes astroFadeInOut {
 	from {
 		opacity: 1;
@@ -159,6 +173,10 @@
 
   html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(9) {
     animation-delay: .87s;
+  }
+
+  html:not([data-astro-nav-entered]) .nav-link[data-astro-cid-wpvy4v7s]:nth-child(10) {
+    animation-delay: .96s;
   }
 }
 

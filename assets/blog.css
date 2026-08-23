@@ -1,0 +1,170 @@
+/* ─────────────────────────────────────────────────────────────
+   BLOG STYLES
+
+   Hand-authored — like assets/nav.js, and UNLIKE every other file
+   in assets/, this is not an Astro build artifact. That's why it
+   has a plain unhashed filename and why its selectors carry no
+   data-astro-cid-* attribute: nothing scoped these, so nothing
+   needs to match a scope.
+
+   Loaded by blog.html (the index) and by every post page under
+   blog/. Design tokens all come from BaseLayout.B3tS9Wpl.css,
+   which must be linked first.
+   ───────────────────────────────────────────────────────────── */
+
+
+/* =============================================================
+   SHARED — page header, used by the index and by each post
+   ============================================================= */
+
+.blog-header {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-12);
+}
+
+.blog-header-desc {
+  margin-top: var(--space-4);
+  font-size: 1.0625rem;
+  color: var(--fg-muted);
+  max-width: 56ch;
+}
+
+
+/* =============================================================
+   INDEX — the list of entries on blog.html
+
+   A plain stacked list rather than a card grid: these are text
+   posts, and the hairline rules read quieter next to the Books /
+   Photography grids than another set of raised cards would.
+   ============================================================= */
+
+.blog-section {
+  padding-bottom: var(--space-24);
+}
+
+.post-list {
+  max-width: 760px;
+}
+
+.post-row {
+  border-top: 1px solid var(--border-soft);
+}
+
+.post-row:last-child {
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* The whole row is the click target, not just the title. */
+.post-link {
+  display: block;
+  padding: var(--space-8) 0;
+}
+
+.post-date {
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+  max-width: none;
+}
+
+.post-title {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.post-link:hover .post-title {
+  color: var(--accent);
+}
+
+.post-excerpt {
+  margin-top: var(--space-3);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--fg-muted);
+  max-width: 60ch;
+}
+
+.post-more {
+  display: inline-block;
+  margin-top: var(--space-4);
+  font-family: var(--font-meta);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--accent);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.post-link:hover .post-more {
+  transform: translateX(4px);
+}
+
+
+/* =============================================================
+   POST — a single entry under blog/
+   ============================================================= */
+
+/* The global h1 (clamp up to 6rem) is sized for section titles
+   like "Books", not for a sentence-length headline. Rein it in. */
+.post-page-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  max-width: 20ch;
+}
+
+.post-header-date {
+  margin-bottom: var(--space-4);
+}
+
+.post-article {
+  padding-bottom: var(--space-24);
+}
+
+.post-body {
+  max-width: 68ch;
+}
+
+.post-body p {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  max-width: none;
+}
+
+.post-body p + p {
+  margin-top: var(--space-6);
+}
+
+/* The opening line, set larger — it's the summary the index
+   shows as the excerpt, so it doubles as the post's lede. */
+.post-lede {
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+  color: var(--fg-muted);
+}
+
+.post-back {
+  display: inline-block;
+  margin-top: var(--space-16);
+  font-family: var(--font-meta);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+@media (width <= 600px) {
+  .post-link {
+    padding: var(--space-6) 0;
+  }
+
+  .post-body p {
+    font-size: 1rem;
+  }
+
+  .post-lede {
+    font-size: 1.125rem !important;
+  }
+}
